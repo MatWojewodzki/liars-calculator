@@ -1,7 +1,7 @@
 function App() {
 
   return (
-    <h1>Liar's calculator</h1>
+    <h1 className="text-xl font-bold italic">Liar's calculator</h1>
   )
 }
 
