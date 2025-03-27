@@ -10,6 +10,9 @@ function Header() {
                 <Link to="/calculator">
                     Calculator
                 </Link>
+                <Link to="/hierarchy">
+                    Hand Hierarchy
+                </Link>
             </div>
         </header>
     )

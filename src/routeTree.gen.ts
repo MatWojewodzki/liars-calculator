@@ -11,10 +11,17 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as HierarchyImport } from './routes/hierarchy'
 import { Route as CalculatorImport } from './routes/calculator'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const HierarchyRoute = HierarchyImport.update({
+  id: '/hierarchy',
+  path: '/hierarchy',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const CalculatorRoute = CalculatorImport.update({
   id: '/calculator',
@@ -46,6 +53,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorImport
       parentRoute: typeof rootRoute
     }
+    '/hierarchy': {
+      id: '/hierarchy'
+      path: '/hierarchy'
+      fullPath: '/hierarchy'
+      preLoaderRoute: typeof HierarchyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -54,36 +68,41 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
+  '/hierarchy': typeof HierarchyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
+  '/hierarchy': typeof HierarchyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
+  '/hierarchy': typeof HierarchyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/calculator'
+  fullPaths: '/' | '/calculator' | '/hierarchy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/calculator'
-  id: '__root__' | '/' | '/calculator'
+  to: '/' | '/calculator' | '/hierarchy'
+  id: '__root__' | '/' | '/calculator' | '/hierarchy'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CalculatorRoute: typeof CalculatorRoute
+  HierarchyRoute: typeof HierarchyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CalculatorRoute: CalculatorRoute,
+  HierarchyRoute: HierarchyRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,7 +116,8 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/calculator"
+        "/calculator",
+        "/hierarchy"
       ]
     },
     "/": {
@@ -105,6 +125,9 @@ export const routeTree = rootRoute
     },
     "/calculator": {
       "filePath": "calculator.tsx"
+    },
+    "/hierarchy": {
+      "filePath": "hierarchy.tsx"
     }
   }
 }
