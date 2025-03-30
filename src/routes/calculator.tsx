@@ -1,62 +1,77 @@
 import React from 'react'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 import { useState } from 'react'
+import { z } from 'zod'
+import CardCountInput from '../components/CardCountInput'
+
+const pokerHandSchema = z.enum([
+    "highCard", "pair", "twoPair", "straight", "threeOfAKind", "fullHouse", "flush", "fourOfAKind", "straightFlush"
+])
+
+const searchSchema = z.object({
+    cardCount: z.number().int().min(1).max(23).optional(),
+    handSize: z.number().int().min(1).max(23).optional(),
+    pokerHand: pokerHandSchema.optional(),
+})
 
 export const Route = createFileRoute('/calculator')({
     component: Calculator,
+    validateSearch: searchSchema,
 })
 
 function Calculator() {
 
-    const [cardCount, setCardCount] = useState(1)
-    const [handSize, setHandSize] = useState(1)
-    const [pokerHand, setPokerHand] = useState("")
+    const navigate = Route.useNavigate()
+    const search = Route.useSearch()
+
+    const [cardCount, setCardCount] = useState(search.cardCount || 1)
+    const [handSize, setHandSize] = useState(search.handSize || 1)
+    const [pokerHand, setPokerHand] = useState(search.pokerHand || "")
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log(cardCount, handSize, pokerHand)
+        navigate({
+            to: "/calculator/results",
+            search: searchSchema.parse({
+                cardCount, handSize, pokerHand
+            })
+        })
     }
 
     return (
         <>
-            <h1>Calculate the exact probability of poker hands on the table</h1>
-            <p>{cardCount} card{cardCount > 1 && "s"} on the table</p>
+            <h1>Calculate the exact probability of a poker hand occurring on the table</h1>
 
             <form onSubmit={handleFormSubmit}>
-                <input
-                    type="range"
-                    name="cardCount"
-                    min="1"
-                    max="23"
-                    step="1"
-                    value={cardCount}
-                    onChange={(e) => setCardCount(e.target.valueAsNumber)}
-                />
-                <input
-                    type="number"
-                    name="handSize"
-                    min="1"
-                    value={handSize}
-                    onChange={(e) => setHandSize(e.target.valueAsNumber)}
-                />
+
+                <label htmlFor="cardCount">Number of cards on the table</label>
+                <CardCountInput id="cardCount" value={cardCount} setValue={setCardCount} />
+
+                <label htmlFor="handSize">Number of cards on your hand</label>
+                <CardCountInput id="handSize" value={handSize} setValue={setHandSize} />
+
+                <label htmlFor="pokerHand">Poker hand</label>
                 <select
-                    name="pokerHand"
+                    id="pokerHand"
                     value={pokerHand}
                     onChange={(e) => setPokerHand(e.target.value)}
                 >
-                    <option value="">Select a poker hand</option>
-                    <option value="Straight flush">Straight flush</option>
-                    <option value="Four of a kind">Four of a kind</option>
-                    <option value="Flush">Flush</option>
-                    <option value="Full house">Full house</option>
-                    <option value="Three of a kind">Three of a kind</option>
-                    <option value="Straight">Straight</option>
-                    <option value="Two pair">Two pair</option>
-                    <option value="Pair">One pair</option>
-                    <option value="High card">High card</option>
+                    <option value="" disabled>Select a poker hand</option>
+                    <option value="highCard">High card</option>
+                    <option value="pair">One pair</option>
+                    <option value="twoPair">Two pair</option>
+                    <option value="straight">Straight</option>
+                    <option value="threeOfAKind">Three of a kind</option>
+                    <option value="fullHouse">Full house</option>
+                    <option value="flush">Flush</option>
+                    <option value="fourOfAKind">Four of a kind</option>
+                    <option value="straightFlush">Straight flush</option>
                 </select>
-                <button type="submit">Calculate!</button>
+
+                <button type="submit" disabled={!pokerHand}>Calculate!</button>
             </form>
+
+            <Outlet />
         </>
     )
 }
