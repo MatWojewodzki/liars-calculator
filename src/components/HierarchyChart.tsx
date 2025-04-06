@@ -14,39 +14,39 @@ function HierarchyChart() {
                 datasets: [
                     {
                         label: "High card",
-                        data: probability_data.rank["1+0"]
+                        data: probability_data.highCard[0]
                     },
                     {
                         label: "Pair",
-                        data: probability_data.rank["2+0"]
+                        data: probability_data.pair[0]
                     },
                     {
                         label: "Two pair",
-                        data: probability_data.rank["2+2"]
+                        data: probability_data.twoPair[0][0]
                     },
                     {
                         label: "Straight",
-                        data: probability_data.straight["5"]
+                        data: probability_data.straight[0]
                     },
                     {
                         label: "Three of a kind",
-                        data: probability_data.rank["3+0"]
+                        data: probability_data.threeOfAKind[0]
                     },
                     {
                         label: "Full house",
-                        data: probability_data.rank["3+2"]
+                        data: probability_data.fullHouse[0][0]
                     },
                     {
                         label: "Flush",
-                        data: probability_data.flush["5"]
+                        data: probability_data.flush[0]
                     },
                     {
                         label: "Four of a kind",
-                        data: probability_data.rank["4+0"]
+                        data: probability_data.fourOfAKind[0]
                     },
                     {
                         label: "Straight flush",
-                        data: probability_data.straight_flush["5"]
+                        data: probability_data.straightFlush[0]
                     }
                 ]
             }}
