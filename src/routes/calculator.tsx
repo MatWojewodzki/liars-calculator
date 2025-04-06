@@ -1,22 +1,13 @@
 import React from 'react'
-import { createFileRoute, Outlet } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
-import { z } from 'zod'
 import CardCountInput from '../components/CardCountInput'
-
-const pokerHandSchema = z.enum([
-    "highCard", "pair", "twoPair", "straight", "threeOfAKind", "fullHouse", "flush", "fourOfAKind", "straightFlush"
-])
-
-const searchSchema = z.object({
-    cardCount: z.number().int().min(1).max(23).optional(),
-    handSize: z.number().int().min(1).max(23).optional(),
-    pokerHand: pokerHandSchema.optional(),
-})
+import calculatorSearch from "../schemas/calculatorSearch.ts";
+import CalculatorResults from "../components/CalculatorResults.tsx";
 
 export const Route = createFileRoute('/calculator')({
     component: Calculator,
-    validateSearch: searchSchema,
+    validateSearch: calculatorSearch,
 })
 
 function Calculator() {
@@ -31,8 +22,8 @@ function Calculator() {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         navigate({
-            to: "/calculator/results",
-            search: searchSchema.parse({
+            to: ".",
+            search: calculatorSearch.parse({
                 cardCount, handSize, pokerHand
             })
         })
@@ -58,7 +49,7 @@ function Calculator() {
                 >
                     <option value="" disabled>Select a poker hand</option>
                     <option value="highCard">High card</option>
-                    <option value="pair">One pair</option>
+                    <option value="pair">Pair</option>
                     <option value="twoPair">Two pair</option>
                     <option value="straight">Straight</option>
                     <option value="threeOfAKind">Three of a kind</option>
@@ -71,7 +62,7 @@ function Calculator() {
                 <button type="submit" disabled={!pokerHand}>Calculate!</button>
             </form>
 
-            <Outlet />
+            <CalculatorResults {...search} />
         </>
     )
 }
