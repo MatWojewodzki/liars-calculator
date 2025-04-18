@@ -27,18 +27,15 @@ function validateCardCount(cardCount: number) {
     if (cardCount > 24) throw Error("cardCount is greater than 23")
 }
 
-function handleEdgeValues(cardCount: number) {
-    if (cardCount === 0) return 0
-    if (cardCount === 24) return 1
-}
-
 export function getOneDimHandProbability(
     pokerHand: OneDimensionalPokerHand,
     matchedCardCount: number,
     cardCount: number
 ): number {
     validateCardCount(cardCount)
-    handleEdgeValues(cardCount)
+
+    if (cardCount === 0) return 0
+    if (cardCount === 24) return 1
 
     const data = probabilityData as ProbabilityData
 
@@ -53,7 +50,9 @@ export function getTwoDimHandProbability(
     cardCount: number
 ): number {
     validateCardCount(cardCount)
-    handleEdgeValues(cardCount)
+
+    if (cardCount === 0) return 0
+    if (cardCount === 24) return 1
 
     const data = probabilityData as ProbabilityData
 
