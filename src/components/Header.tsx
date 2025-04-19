@@ -6,14 +6,25 @@ function Header() {
             <Link to="/">
                 <h1>Liar's Calculator</h1>
             </Link>
-            <div className="flex gap-10">
-                <Link to="/calculator">
-                    Calculator
-                </Link>
-                <Link to="/hand-order">
-                    Poker hand order
-                </Link>
-            </div>
+            <nav>
+                <ul className="flex gap-10">
+                    <li>
+                        <Link to="/calculator">
+                            Calculator
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/hand-order">
+                            Poker hand order
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/game-rules">
+                            Game rules
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
         </header>
     )
 }
