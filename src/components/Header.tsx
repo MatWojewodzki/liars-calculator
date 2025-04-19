@@ -10,8 +10,8 @@ function Header() {
                 <Link to="/calculator">
                     Calculator
                 </Link>
-                <Link to="/hierarchy">
-                    Hand Hierarchy
+                <Link to="/hand-order">
+                    Poker hand order
                 </Link>
             </div>
         </header>

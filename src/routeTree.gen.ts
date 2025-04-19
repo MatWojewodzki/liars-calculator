@@ -11,15 +11,15 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as HierarchyImport } from './routes/hierarchy'
+import { Route as HandOrderImport } from './routes/hand-order'
 import { Route as CalculatorImport } from './routes/calculator'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const HierarchyRoute = HierarchyImport.update({
-  id: '/hierarchy',
-  path: '/hierarchy',
+const HandOrderRoute = HandOrderImport.update({
+  id: '/hand-order',
+  path: '/hand-order',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,11 +53,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorImport
       parentRoute: typeof rootRoute
     }
-    '/hierarchy': {
-      id: '/hierarchy'
-      path: '/hierarchy'
-      fullPath: '/hierarchy'
-      preLoaderRoute: typeof HierarchyImport
+    '/hand-order': {
+      id: '/hand-order'
+      path: '/hand-order'
+      fullPath: '/hand-order'
+      preLoaderRoute: typeof HandOrderImport
       parentRoute: typeof rootRoute
     }
   }
@@ -68,41 +68,41 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
-  '/hierarchy': typeof HierarchyRoute
+  '/hand-order': typeof HandOrderRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
-  '/hierarchy': typeof HierarchyRoute
+  '/hand-order': typeof HandOrderRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
-  '/hierarchy': typeof HierarchyRoute
+  '/hand-order': typeof HandOrderRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/calculator' | '/hierarchy'
+  fullPaths: '/' | '/calculator' | '/hand-order'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/calculator' | '/hierarchy'
-  id: '__root__' | '/' | '/calculator' | '/hierarchy'
+  to: '/' | '/calculator' | '/hand-order'
+  id: '__root__' | '/' | '/calculator' | '/hand-order'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CalculatorRoute: typeof CalculatorRoute
-  HierarchyRoute: typeof HierarchyRoute
+  HandOrderRoute: typeof HandOrderRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CalculatorRoute: CalculatorRoute,
-  HierarchyRoute: HierarchyRoute,
+  HandOrderRoute: HandOrderRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +117,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/calculator",
-        "/hierarchy"
+        "/hand-order"
       ]
     },
     "/": {
@@ -126,8 +126,8 @@ export const routeTree = rootRoute
     "/calculator": {
       "filePath": "calculator.tsx"
     },
-    "/hierarchy": {
-      "filePath": "hierarchy.tsx"
+    "/hand-order": {
+      "filePath": "hand-order.tsx"
     }
   }
 }

@@ -22,6 +22,8 @@ type ProbabilityData = {
     straightFlush: OneDimensionProbabilities
 }
 
+const data = probabilityData as ProbabilityData
+
 function validateCardCount(cardCount: number) {
     if (cardCount < 0) throw Error("cardCount is less than 1")
     if (cardCount > 24) throw Error("cardCount is greater than 23")
@@ -36,8 +38,6 @@ export function getOneDimHandProbability(
 
     if (cardCount === 0) return 0
     if (cardCount === 24) return 1
-
-    const data = probabilityData as ProbabilityData
 
     cardCount--
     return data[pokerHand][matchedCardCount][cardCount]
@@ -54,8 +54,27 @@ export function getTwoDimHandProbability(
     if (cardCount === 0) return 0
     if (cardCount === 24) return 1
 
-    const data = probabilityData as ProbabilityData
-
     cardCount--
     return data[pokerHand][firstCardMatchedCount][secondCardMatchedCount][cardCount]
+}
+
+export function getOneDimHandAllProbabilities(
+    pokerHand: OneDimensionalPokerHand,
+    matchedCardCount: number,
+    handSize: number
+): number[] {
+    return data[pokerHand][matchedCardCount].slice(0, -handSize).map(
+        (probability) => probability * 100
+    )
+}
+
+export function getTwoDimHandAllProbabilities(
+    pokerHand: TwoDimensionalPokerHand,
+    firstCardMatchedCount: number,
+    secondCardMatchedCount: number,
+    handSize: number
+): number[] {
+    return data[pokerHand][firstCardMatchedCount][secondCardMatchedCount].slice(0, -handSize).map(
+        (probability) => probability * 100
+    )
 }
