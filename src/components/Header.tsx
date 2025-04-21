@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router"
 
 function Header() {
     return (
@@ -9,7 +9,7 @@ function Header() {
             <nav>
                 <ul className="flex gap-10">
                     <li>
-                        <Link to="/calculator">
+                        <Link to="/">
                             Calculator
                         </Link>
                     </li>

@@ -1,35 +1,68 @@
-import {createFileRoute, Link} from '@tanstack/react-router'
+import React from 'react'
+import { createFileRoute } from '@tanstack/react-router'
+import { useState } from 'react'
+import CardCountInput from '../components/CardCountInput'
+import indexSearch from "../schemas/indexSearch.ts"
+import CalculatorResults from "../components/CalculatorResults.tsx"
 
 export const Route = createFileRoute('/')({
     component: Index,
+    validateSearch: indexSearch,
 })
 
 function Index() {
+
+    const navigate = Route.useNavigate()
+    const search = Route.useSearch()
+
+    const [cardCount, setCardCount] = useState(search.cardCount || 1)
+    const [handSize, setHandSize] = useState(search.handSize || 1)
+    const [pokerHand, setPokerHand] = useState(search.pokerHand || "")
+
+    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        navigate({
+            to: ".",
+            search: indexSearch.parse({
+                cardCount, handSize, pokerHand
+            })
+        })
+    }
+
     return (
         <>
-            <section>
-                <h1>Calculate the probability for every poker hand in th liar's poker card game</h1>
-                <p>The exact result for any point in game</p>
-                <Link to="/calculator">
-                    Open calculator
-                </Link>
-            </section>
+            <h1>Calculate the exact probability of a poker hand occurring on the table</h1>
 
-            <section>
-                <h2>Game rules</h2>
-                <p>There are many variants of liar's poker, so check the one this website refers to.</p>
-                <Link to="/game-rules">
-                    Check the game rules
-                </Link>
-            </section>
+            <form onSubmit={handleFormSubmit}>
 
-            <section>
-                <h2>Poker hand order according to maths</h2>
-                <p>Not sure which hand should be higher? Compare probability plots for all of them.</p>
-                <Link to="/hand-order">
-                    Suggested poker hand order
-                </Link>
-            </section>
+                <label htmlFor="cardCount">Number of cards on the table</label>
+                <CardCountInput id="cardCount" value={cardCount} setValue={setCardCount} />
+
+                <label htmlFor="handSize">Number of cards on your hand</label>
+                <CardCountInput id="handSize" value={handSize} setValue={setHandSize} />
+
+                <label htmlFor="pokerHand">Poker hand</label>
+                <select
+                    id="pokerHand"
+                    value={pokerHand}
+                    onChange={(e) => setPokerHand(e.target.value)}
+                >
+                    <option value="" disabled>Select a poker hand</option>
+                    <option value="highCard">High card</option>
+                    <option value="pair">Pair</option>
+                    <option value="twoPair">Two pair</option>
+                    <option value="straight">Straight</option>
+                    <option value="threeOfAKind">Three of a kind</option>
+                    <option value="fullHouse">Full house</option>
+                    <option value="flush">Flush</option>
+                    <option value="fourOfAKind">Four of a kind</option>
+                    <option value="straightFlush">Straight flush</option>
+                </select>
+
+                <button type="submit" disabled={!pokerHand}>Calculate!</button>
+            </form>
+
+            <CalculatorResults {...search} />
         </>
     )
 }

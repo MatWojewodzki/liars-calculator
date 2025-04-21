@@ -1,4 +1,4 @@
-import type { CalculatorSearch } from "../schemas/calculatorSearch.ts"
+import type { CalculatorSearch } from "../schemas/indexSearch.ts"
 import getHandDimension from "../utils/getHandDimension.ts"
 import {getOneDimHandVariants, getTwoDimHandVariants} from "../utils/getHandVariants.ts"
 import {OneDimensionalPokerHand, TwoDimensionalPokerHand} from "../schemas/pokerHand.ts"

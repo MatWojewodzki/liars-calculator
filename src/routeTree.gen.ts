@@ -13,7 +13,6 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as HandOrderImport } from './routes/hand-order'
 import { Route as GameRulesImport } from './routes/game-rules'
-import { Route as CalculatorImport } from './routes/calculator'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -27,12 +26,6 @@ const HandOrderRoute = HandOrderImport.update({
 const GameRulesRoute = GameRulesImport.update({
   id: '/game-rules',
   path: '/game-rules',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const CalculatorRoute = CalculatorImport.update({
-  id: '/calculator',
-  path: '/calculator',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -51,13 +44,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/calculator': {
-      id: '/calculator'
-      path: '/calculator'
-      fullPath: '/calculator'
-      preLoaderRoute: typeof CalculatorImport
       parentRoute: typeof rootRoute
     }
     '/game-rules': {
@@ -81,14 +67,12 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/calculator': typeof CalculatorRoute
   '/game-rules': typeof GameRulesRoute
   '/hand-order': typeof HandOrderRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/calculator': typeof CalculatorRoute
   '/game-rules': typeof GameRulesRoute
   '/hand-order': typeof HandOrderRoute
 }
@@ -96,30 +80,27 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/calculator': typeof CalculatorRoute
   '/game-rules': typeof GameRulesRoute
   '/hand-order': typeof HandOrderRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/calculator' | '/game-rules' | '/hand-order'
+  fullPaths: '/' | '/game-rules' | '/hand-order'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/calculator' | '/game-rules' | '/hand-order'
-  id: '__root__' | '/' | '/calculator' | '/game-rules' | '/hand-order'
+  to: '/' | '/game-rules' | '/hand-order'
+  id: '__root__' | '/' | '/game-rules' | '/hand-order'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CalculatorRoute: typeof CalculatorRoute
   GameRulesRoute: typeof GameRulesRoute
   HandOrderRoute: typeof HandOrderRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CalculatorRoute: CalculatorRoute,
   GameRulesRoute: GameRulesRoute,
   HandOrderRoute: HandOrderRoute,
 }
@@ -135,16 +116,12 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/calculator",
         "/game-rules",
         "/hand-order"
       ]
     },
     "/": {
       "filePath": "index.tsx"
-    },
-    "/calculator": {
-      "filePath": "calculator.tsx"
     },
     "/game-rules": {
       "filePath": "game-rules.tsx"
