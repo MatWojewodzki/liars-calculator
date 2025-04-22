@@ -1,10 +1,16 @@
 import { Link } from "@tanstack/react-router"
 import { useState } from "react"
 import MaterialSymbol from "./MaterialSymbol.tsx"
+import classNames from "classnames"
 
 function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
+
+
     return (
-        <nav id="navbar" className={`w-full sm:w-auto sm:block ${isMenuOpen ? "block" : "hidden"}`}>
+        <nav
+            id="navbar"
+            className={classNames("w-full sm:w-auto sm:block", { "block": isMenuOpen, "hidden": !isMenuOpen})}
+        >
             <ul className="flex flex-col sm:flex-row sm:gap-x-5 items-baseline">
                 <li>
                     <Link to="/">

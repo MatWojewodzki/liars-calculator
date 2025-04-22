@@ -1,6 +1,8 @@
-function MaterialSymbol({ iconName }: { iconName: string }) {
+import classNames from "classnames"
+
+function MaterialSymbol({ iconName, className }: { iconName: string, className?: string }) {
     return (
-        <span className="material-symbols-outlined">
+        <span className={classNames("material-symbols-outlined", className)}>
             {iconName}
         </span>
     )
