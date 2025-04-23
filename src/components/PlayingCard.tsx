@@ -4,10 +4,15 @@ import classNames from "classnames"
 function PlayingCard({ isMatching }: { isMatching: boolean }) {
     return (
         <div
-            className={classNames("w-32 aspect-[0.716] border-3 flex items-stretch p-1 rounded-md", {
-                "border-green-300": isMatching,
-                "border-red-300": !isMatching,
-            })}
+            className={classNames(
+                "aspect-[0.716] flex items-stretch p-1 rounded-xl",
+                "w-12 sm:w-16 md:w-24 lg:w-32 xl:w-40 ",
+                "border-2 sm:border-2 md:border-3 lg:border-4 ",
+                {
+                    "border-green-400": isMatching,
+                    "border-red-400": !isMatching,
+                }
+            )}
         >
             <div
                 className={classNames("flex grow justify-center items-center rounded-md", {
@@ -17,7 +22,7 @@ function PlayingCard({ isMatching }: { isMatching: boolean }) {
             >
                 <MaterialSymbol
                     iconName={isMatching ? "check_circle" : "cancel"}
-                    className={isMatching ? "text-green-500" : "text-red-500"}
+                    className={isMatching ? "text-green-400" : "text-red-400"}
                 />
             </div>
         </div>

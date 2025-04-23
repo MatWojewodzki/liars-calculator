@@ -30,46 +30,49 @@ function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorSearch)
 
     return (
         <>
-            {handDimension === 1 ? (
-                getOneDimHandVariants(pokerHand as OneDimensionalPokerHand, handSize).map((variant) => (
-                    <ProbabilityCase
-                        key={`${pokerHand}${variant}`}
-                        handShape={{
-                            cardGroup1Data: {
-                                matchingCardCount: variant,
-                                totalCardCount: oneDimTotalCardCounts[pokerHand as OneDimensionalPokerHand]
-                            }
-                        }}
-                        probability={getOneDimHandProbability(
-                            pokerHand as OneDimensionalPokerHand,
-                            variant,
-                            cardCount - handSize
-                        )}
-                    />
-                ))
-            ) : (
-                getTwoDimHandVariants(pokerHand as TwoDimensionalPokerHand, handSize).map((variant) => (
-                    <ProbabilityCase
-                        key={`${pokerHand}${variant}`}
-                        handShape={{
-                            cardGroup1Data: {
-                                matchingCardCount: variant[0],
-                                totalCardCount: twoDimTotalCardCounts[pokerHand as TwoDimensionalPokerHand][0]
-                            },
-                            cardGroup2Data: {
-                                matchingCardCount: variant[1],
-                                totalCardCount: twoDimTotalCardCounts[pokerHand as TwoDimensionalPokerHand][1]
-                            }
-                        }}
-                        probability={getTwoDimHandProbability(
-                            pokerHand as TwoDimensionalPokerHand,
-                            variant[0],
-                            variant[1],
-                            cardCount - handSize
-                        )}
-                    />
-                ))
-            )}
+            <h2 className="text-center">Your odds</h2>
+            <div className="flex flex-col gap-8">
+                {handDimension === 1 ? (
+                    getOneDimHandVariants(pokerHand as OneDimensionalPokerHand, handSize).map((variant) => (
+                        <ProbabilityCase
+                            key={`${pokerHand}${variant}`}
+                            handShape={{
+                                cardGroup1Data: {
+                                    matchingCardCount: variant,
+                                    totalCardCount: oneDimTotalCardCounts[pokerHand as OneDimensionalPokerHand]
+                                }
+                            }}
+                            probability={getOneDimHandProbability(
+                                pokerHand as OneDimensionalPokerHand,
+                                variant,
+                                cardCount - handSize
+                            )}
+                        />
+                    ))
+                ) : (
+                    getTwoDimHandVariants(pokerHand as TwoDimensionalPokerHand, handSize).map((variant) => (
+                        <ProbabilityCase
+                            key={`${pokerHand}${variant}`}
+                            handShape={{
+                                cardGroup1Data: {
+                                    matchingCardCount: variant[0],
+                                    totalCardCount: twoDimTotalCardCounts[pokerHand as TwoDimensionalPokerHand][0]
+                                },
+                                cardGroup2Data: {
+                                    matchingCardCount: variant[1],
+                                    totalCardCount: twoDimTotalCardCounts[pokerHand as TwoDimensionalPokerHand][1]
+                                }
+                            }}
+                            probability={getTwoDimHandProbability(
+                                pokerHand as TwoDimensionalPokerHand,
+                                variant[0],
+                                variant[1],
+                                cardCount - handSize
+                            )}
+                        />
+                    ))
+                )}
+            </div>
         </>
     )
 }

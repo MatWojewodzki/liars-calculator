@@ -6,7 +6,7 @@ function PlayingCardGroup({ matchingCardCount, totalCardCount}: CardGroupData) {
 
     const cardIndexes = Array.from({ length: totalCardCount }, (_, i) => i)
     return (
-        <div className="flex gap-2 mx-4">
+        <div className="flex gap-2">
             {cardIndexes.map(idx => <PlayingCard key={idx} isMatching={idx < matchingCardCount}/>)}
         </div>
     )
