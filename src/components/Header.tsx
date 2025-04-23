@@ -38,7 +38,7 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
-        <header className="flex flex-col sm:flex-row justify-between p-3 items-baseline">
+        <header className="flex flex-col sm:flex-row justify-between p-5 items-baseline shadow-2xs">
             <div className="flex justify-between items-center sm:items-baseline w-full sm:w-auto">
                 <Link to="/">
                     Liar's Calculator
