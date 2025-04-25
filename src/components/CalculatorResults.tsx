@@ -23,7 +23,7 @@ const twoDimTotalCardCounts = {
 function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorSearch) {
 
     if (pokerHand === undefined || handSize === undefined || cardCount === undefined) {
-        return null
+        return <h2 className="text-center">You will see your results here.</h2>
     }
 
     const handDimension = getHandDimension(pokerHand)

@@ -6,7 +6,7 @@ export const Route = createRootRoute({
     component: () => (
         <div className="flex flex-col min-h-dvh w-full">
             <Header />
-            <main className="flex-grow">
+            <main className="grow flex flex-col">
                 <Outlet />
             </main>
             <Footer />
