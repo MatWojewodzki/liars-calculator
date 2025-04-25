@@ -1,11 +1,20 @@
-import { Link } from "@tanstack/react-router"
+import { ReactNode } from "react"
+import { Link, LinkProps } from "@tanstack/react-router"
 import { useState } from "react"
 import MaterialSymbol from "./MaterialSymbol.tsx"
 import classNames from "classnames"
 
+function NavigationLink({ to, children }: Pick<LinkProps, "to"> & { children: ReactNode }) {
+    return <Link
+        to={to}
+        className="hover:underline underline-offset-3 decoration-2"
+        activeProps={{ className: "underline" }}
+    >
+        {children}
+    </Link>
+}
+
 function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
-
-
     return (
         <nav
             id="navbar"
@@ -13,19 +22,19 @@ function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
         >
             <ul className="flex flex-col sm:flex-row sm:gap-x-5 items-baseline">
                 <li>
-                    <Link to="/">
-                        Calculator
-                    </Link>
+                    <NavigationLink to="/">
+                        Probability calculator
+                    </NavigationLink>
                 </li>
                 <li>
-                    <Link to="/hand-order">
+                    <NavigationLink to="/hand-order">
                         Poker hand order
-                    </Link>
+                    </NavigationLink>
                 </li>
                 <li>
-                    <Link to="/game-rules">
+                    <NavigationLink to="/game-rules">
                         Game rules
-                    </Link>
+                    </NavigationLink>
                 </li>
             </ul>
         </nav>
@@ -38,7 +47,7 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
-        <header className="flex flex-col sm:flex-row justify-between p-5 items-baseline shadow-2xs">
+        <header className="flex flex-col sm:flex-row justify-between p-5 items-baseline bg-neutral-50">
             <div className="flex justify-between items-center sm:items-baseline w-full sm:w-auto">
                 <Link to="/">
                     Liar's Calculator
