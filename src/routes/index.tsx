@@ -31,27 +31,26 @@ function Index() {
 
     return (
         <>
-            <section className="py-16 px-1 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
+            <section className="py-16 px-1 flex flex-col items-center bg-neutral-50">
+
                 <h1 className="text-center">Calculate the odds in Liar's Poker card game</h1>
                 <p className="text-center">The exact probability of every poker hand assuming a 24-card deck is used.</p>
-            </section>
-            <section className="py-16 px-1 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40 flex justify-center bg-neutral-50">
+
                 <form
                     onSubmit={handleFormSubmit}
-                    className="flex flex-col gap-3 p-12 inset-shadow-sm rounded-2xl w-fit bg-white"
+                    className="flex flex-col lg:flex-row items-stretch lg:items-baseline gap-3 mt-12"
                 >
-                    <div className="flex justify-center gap-x-3">
+                    <div className="flex justify-center p-5 gap-x-3 items-baseline bg-white rounded-lg">
                         <label htmlFor="cardCount">Number of cards on the table</label>
                         <CardCountInput id="cardCount" value={cardCount} setValue={setCardCount} />
                     </div>
 
-                    <div className="flex justify-center gap-x-3">
+                    <div className="flex justify-center p-5 gap-x-3 items-baseline bg-white rounded-lg">
                         <label htmlFor="handSize">Number of cards on your hand</label>
                         <CardCountInput id="handSize" value={handSize} setValue={setHandSize} />
                     </div>
-
-                    <div className="flex justify-center gap-x-3">
-                        <label htmlFor="pokerHand">Poker hand</label>
+                    <div className="flex justify-center p-5 gap-x-3 items-baseline bg-white rounded-lg">
+                        <label htmlFor="pokerHand" className="sr-only">Poker hand</label>
                         <select
                             id="pokerHand"
                             value={pokerHand}
@@ -69,16 +68,13 @@ function Index() {
                             <option value="straightFlush">Straight flush</option>
                         </select>
                     </div>
-                    <div className="flex justify-center">
-                        <button
-                            type="submit"
-                            disabled={!pokerHand}
-                            className="mt-4 py-2 px-4 w-fit rounded-full bg-neutral-200 hover:bg-neutral-300"
-                        >
-                            Calculate!
-                        </button>
-                    </div>
-
+                    <button
+                        type="submit"
+                        disabled={!pokerHand}
+                        className="w-full lg:w-fit py-2 px-4 rounded-lg lg:rounded-full bg-neutral-200 hover:bg-neutral-300"
+                    >
+                        Calculate!
+                    </button>
                 </form>
             </section>
             <section className="py-16 px-1 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
