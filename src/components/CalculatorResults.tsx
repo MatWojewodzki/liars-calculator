@@ -36,7 +36,7 @@ function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorSearch)
         <>
             <section className="mb-12">
                 <h2 className="text-center">Your odds</h2>
-                <p className="text-center">Depending on the cards in your hand</p>
+                <p className="text-center">Depending on the cards in your hand, if...</p>
             </section>
             <section className="flex flex-col gap-8">
                 {handDimension === 1 ? (
