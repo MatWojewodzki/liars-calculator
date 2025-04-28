@@ -18,9 +18,12 @@ function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
     return (
         <nav
             id="navbar"
-            className={classNames("w-full sm:w-auto sm:block", { "block": isMenuOpen, "hidden": !isMenuOpen})}
+            className={classNames(
+                "px-6 py-2 mt-5 w-full sm:w-auto sm:block bg-neutral-200 sm:bg-transparent",
+                { "block": isMenuOpen, "hidden": !isMenuOpen})
+            }
         >
-            <ul className="flex flex-col sm:flex-row sm:gap-x-5 items-baseline">
+            <ul className="flex flex-col gap-y-1 sm:flex-row sm:gap-x-5 items-baseline">
                 <li>
                     <NavigationLink to="/">
                         Probability calculator
@@ -47,8 +50,8 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
-        <header className="flex flex-col sm:flex-row justify-between p-5 items-baseline bg-neutral-50">
-            <div className="flex justify-between items-center sm:items-baseline w-full sm:w-auto">
+        <header className="flex flex-col sm:flex-row justify-between py-5 items-baseline bg-neutral-50">
+            <div className="flex justify-between items-center px-5 sm:items-baseline w-full sm:w-auto">
                 <Link to="/">
                     Liar's Calculator
                 </Link>
