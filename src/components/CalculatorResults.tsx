@@ -23,15 +23,22 @@ const twoDimTotalCardCounts = {
 function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorSearch) {
 
     if (pokerHand === undefined || handSize === undefined || cardCount === undefined) {
-        return <h2 className="text-center">You will see your results here.</h2>
+        return (
+            <section className="grow flex justify-center items-center">
+                <h2 className="text-center">You will see your results here.</h2>
+            </section>
+        )
     }
 
     const handDimension = getHandDimension(pokerHand)
 
     return (
         <>
-            <h2 className="text-center">Your odds</h2>
-            <div className="flex flex-col gap-8">
+            <section className="mb-12">
+                <h2 className="text-center">Your odds</h2>
+                <p className="text-center">Depending on the cards in your hand</p>
+            </section>
+            <section className="flex flex-col gap-8">
                 {handDimension === 1 ? (
                     getOneDimHandVariants(pokerHand as OneDimensionalPokerHand, handSize).map((variant) => (
                         <ProbabilityCase
@@ -72,7 +79,7 @@ function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorSearch)
                         />
                     ))
                 )}
-            </div>
+            </section>
         </>
     )
 }

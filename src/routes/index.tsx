@@ -77,7 +77,7 @@ function Index() {
                     </button>
                 </form>
             </section>
-            <section className="grow flex flex-col items-center justify-center py-16 px-1 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
+            <section className="grow flex flex-col py-16 px-1 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
                 <CalculatorResults {...search} />
             </section>
         </div>
