@@ -1,4 +1,4 @@
-import type { CalculatorSearch } from "../schemas/indexSearch.ts"
+import type { CalculatorResultSearch } from "../schemas/calculatorResultSearch.ts"
 import getHandDimension from "../utils/getHandDimension.ts"
 import {getOneDimHandVariants, getTwoDimHandVariants} from "../utils/getHandVariants.ts"
 import {OneDimensionalPokerHand, TwoDimensionalPokerHand} from "../schemas/pokerHand.ts"
@@ -20,22 +20,14 @@ const twoDimTotalCardCounts = {
     fullHouse: [3, 2],
 }
 
-function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorSearch) {
-
-    if (pokerHand === undefined || handSize === undefined || cardCount === undefined) {
-        return (
-            <section className="grow flex justify-center items-center">
-                <h2 className="text-center">You will see your results here.</h2>
-            </section>
-        )
-    }
+function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorResultSearch) {
 
     const handDimension = getHandDimension(pokerHand)
 
     return (
         <>
             <section className="mb-12">
-                <h2 className="text-center">Your odds</h2>
+                <h2 className="text-center font-bold text-2xl">Your odds</h2>
                 <p className="text-center">Depending on the cards in your hand, if...</p>
             </section>
             <section className="flex flex-col gap-8">

@@ -30,7 +30,7 @@ function ProbabilityCase({ handShape, probability }: ProbabilityCaseProps) {
                     {handShape.cardGroup2Data && <PlayingCardGroup {...handShape.cardGroup2Data} />}
                 </div>
                 <div className="flex items-center justify-end gap-1 md:flex-col md:justify-center md:items-end">
-                    <p className="flex flex-col justify-center">
+                    <p className="flex flex-col justify-center text-4xl font-bold">
                         {(probability * 100).toFixed(2)}%
                     </p>
                     <p>

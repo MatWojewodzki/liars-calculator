@@ -26,7 +26,7 @@ function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
             <ul className="flex flex-col gap-y-1 sm:flex-row sm:gap-x-5 items-baseline">
                 <li>
                     <NavigationLink to="/">
-                        Probability calculator
+                        Home
                     </NavigationLink>
                 </li>
                 <li>
@@ -52,7 +52,7 @@ function Header() {
     return (
         <header className="flex flex-col sm:flex-row justify-between py-5 items-baseline bg-neutral-50">
             <div className="flex justify-between items-center px-5 sm:items-baseline w-full sm:w-auto">
-                <Link to="/">
+                <Link to="/" className="text-lg">
                     Liar's Calculator
                 </Link>
                 <button
