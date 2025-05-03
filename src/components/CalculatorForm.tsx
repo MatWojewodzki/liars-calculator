@@ -26,16 +26,16 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             onSubmit={handleFormSubmit}
             className="flex flex-col lg:flex-row items-stretch lg:items-baseline gap-3"
         >
-            <div className="flex justify-center p-5 gap-x-3 items-baseline bg-white rounded-lg">
+            <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
                 <label htmlFor="cardCount">Number of cards on the table</label>
                 <CardCountInput id="cardCount" value={cardCount} setValue={setCardCount} />
             </div>
 
-            <div className="flex justify-center p-5 gap-x-3 items-baseline bg-white rounded-lg">
+            <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
                 <label htmlFor="handSize">Number of cards on your hand</label>
                 <CardCountInput id="handSize" value={handSize} setValue={setHandSize} />
             </div>
-            <div className="flex justify-center p-5 gap-x-3 items-baseline bg-white rounded-lg">
+            <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
                 <label htmlFor="pokerHand" className="sr-only">Poker hand</label>
                 <select
                     id="pokerHand"
@@ -57,7 +57,7 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             <button
                 type="submit"
                 disabled={!pokerHand}
-                className="w-full lg:w-fit py-2 px-4 rounded-lg lg:rounded-full bg-neutral-200 hover:bg-neutral-300"
+                className="w-full lg:w-fit p-4 mt-4 lg:mt-0 lg:ms-4 rounded-lg bg-neutral-200 hover:bg-neutral-300"
             >
                 Calculate!
             </button>
