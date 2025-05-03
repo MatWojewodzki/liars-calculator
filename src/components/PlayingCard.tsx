@@ -5,8 +5,8 @@ function PlayingCard({ isMatching }: { isMatching: boolean }) {
     return (
         <div
             className={classNames(
-                "aspect-[0.716] flex items-stretch p-1 rounded-xl",
-                "w-12 sm:w-16 md:w-24 lg:w-32 xl:w-40 ",
+                "aspect-[0.716] flex items-stretch p-1 rounded-md md:rounded-xl",
+                "w-10 sm:w-20 lg:w-32 xl:w-40 ",
                 "border-2 sm:border-2 md:border-3 lg:border-4 ",
                 {
                     "border-green-400": isMatching,
@@ -15,7 +15,7 @@ function PlayingCard({ isMatching }: { isMatching: boolean }) {
             )}
         >
             <div
-                className={classNames("flex grow justify-center items-center rounded-md", {
+                className={classNames("flex grow justify-center items-center rounded-sm md:rounded-md", {
                     "bg-green-200": isMatching,
                     "bg-red-200": !isMatching,
                 })}

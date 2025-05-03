@@ -30,7 +30,7 @@ function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorResultS
                 <h2 className="text-center font-bold text-2xl">Your odds</h2>
                 <p className="text-center">Depending on the cards in your hand, if...</p>
             </section>
-            <section className="flex flex-col gap-8">
+            <section className="flex flex-col gap-12">
                 {handDimension === 1 ? (
                     getOneDimHandVariants(pokerHand as OneDimensionalPokerHand, handSize).map((variant) => (
                         <ProbabilityCase
