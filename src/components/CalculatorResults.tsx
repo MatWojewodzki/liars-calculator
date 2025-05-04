@@ -27,7 +27,7 @@ function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorResultS
     return (
         <>
             <section className="mb-12">
-                <h2 className="text-center font-bold text-2xl">Your odds</h2>
+                <h2 className="text-center font-semibold text-2xl">Your odds</h2>
                 <p className="text-center">Depending on the cards in your hand, if...</p>
             </section>
             <section className="flex flex-col gap-12">
