@@ -1,5 +1,5 @@
-import ProbabilityChart from "./ProbabilityChart.tsx";
-import probabilityData from "../../data/probability_data.json"
+import ProbabilityChart from "./ProbabilityChart.tsx"
+import {getOneDimHandAllProbabilities, getTwoDimHandAllProbabilities} from "../../utils/getHandProbability.ts";
 
 function HandComparisonChart() {
     return (
@@ -10,39 +10,39 @@ function HandComparisonChart() {
                 datasets: [
                     {
                         label: "High card",
-                        data: probabilityData.highCard[0]
+                        data: getOneDimHandAllProbabilities("highCard", 0, 0)
                     },
                     {
                         label: "One pair",
-                        data: probabilityData.pair[0]
+                        data: getOneDimHandAllProbabilities("pair", 0, 0)
                     },
                     {
                         label: "Straight",
-                        data: probabilityData.straight[0]
+                        data: getOneDimHandAllProbabilities("straight", 0, 0)
                     },
                     {
                         label: "Two pair",
-                        data: probabilityData.twoPair[0][0]
+                        data: getTwoDimHandAllProbabilities("twoPair", 0, 0, 0)
                     },
                     {
                         label: "Three of a kind",
-                        data: probabilityData.threeOfAKind[0]
+                        data: getOneDimHandAllProbabilities("threeOfAKind", 0, 0)
                     },
                     {
                         label: "Full house",
-                        data: probabilityData.fullHouse[0][0]
+                        data: getTwoDimHandAllProbabilities("fullHouse", 0, 0, 0)
                     },
                     {
                         label: "Flush",
-                        data: probabilityData.flush[0]
+                        data: getOneDimHandAllProbabilities("flush", 0, 0)
                     },
                     {
                         label: "Four of a kind",
-                        data: probabilityData.fourOfAKind[0]
+                        data: getOneDimHandAllProbabilities("fourOfAKind", 0, 0)
                     },
                     {
                         label: "Straight flush",
-                        data: probabilityData.straightFlush[0]
+                        data: getOneDimHandAllProbabilities("straightFlush", 0, 0)
                     }
                 ]
             }}

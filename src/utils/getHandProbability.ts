@@ -63,7 +63,7 @@ export function getOneDimHandAllProbabilities(
     matchedCardCount: number,
     handSize: number
 ): number[] {
-    return data[pokerHand][matchedCardCount].slice(0, -handSize).map(
+    return data[pokerHand][matchedCardCount].slice(0, handSize > 0 ? -handSize : undefined).map(
         (probability) => probability * 100
     )
 }
@@ -74,7 +74,7 @@ export function getTwoDimHandAllProbabilities(
     secondCardMatchedCount: number,
     handSize: number
 ): number[] {
-    return data[pokerHand][firstCardMatchedCount][secondCardMatchedCount].slice(0, -handSize).map(
+    return data[pokerHand][firstCardMatchedCount][secondCardMatchedCount].slice(0, handSize > 0 ? -handSize : undefined).map(
         (probability) => probability * 100
     )
 }
