@@ -28,21 +28,21 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
         >
             <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
                 <label htmlFor="cardCount">Number of cards on the table</label>
-                <CardCountInput id="cardCount" value={cardCount} setValue={setCardCount} />
+                <CardCountInput id="cardCount" min={1} value={cardCount} setValue={setCardCount} />
             </div>
 
             <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
                 <label htmlFor="handSize">Number of cards on your hand</label>
-                <CardCountInput id="handSize" value={handSize} setValue={setHandSize} />
+                <CardCountInput id="handSize" min={1} value={handSize} setValue={setHandSize} />
             </div>
-            <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
+            <div className="flex justify-center p-5 items-baseline bg-white rounded-lg">
                 <label htmlFor="pokerHand" className="sr-only">Poker hand</label>
                 <select
                     id="pokerHand"
                     value={pokerHand}
                     onChange={(e) => setPokerHand(e.target.value)}
                 >
-                    <option value="" disabled>Select a poker hand</option>
+                    <option value="" hidden>Select a poker hand</option>
                     <option value="highCard">High card</option>
                     <option value="pair">Pair</option>
                     <option value="twoPair">Two pair</option>
@@ -57,7 +57,7 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             <button
                 type="submit"
                 disabled={!pokerHand}
-                className="w-full lg:w-fit p-4 mt-4 lg:mt-0 lg:ms-4 rounded-lg bg-neutral-200 hover:bg-neutral-300"
+                className="w-full lg:w-fit p-4 lg:p-5 mt-4 lg:mt-0 lg:ms-4 rounded-lg bg-neutral-200 hover:bg-neutral-300"
             >
                 Calculate!
             </button>

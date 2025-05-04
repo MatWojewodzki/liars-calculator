@@ -1,13 +1,38 @@
-function CardCountInput({ id, value, setValue }: { id: string, value: number, setValue: (value: number) => void }) {
+import { ChangeEvent, useState } from "react"
+
+function CardCountInput({ id, min, value, setValue }: { id: string, min: number, value: number, setValue: (value: number) => void }) {
+
+    const [localValue, setLocalValue] = useState(value.toString())
+
+    function handleChange(e: ChangeEvent<HTMLInputElement>) {
+
+        if (e.target.value === "") {
+            setLocalValue("")
+            setValue(min)
+            return
+        }
+
+        const newValue = Math.max(min, Math.min(23, parseInt(e.target.value)))
+        setLocalValue(newValue.toString())
+        setValue(newValue)
+    }
+
+    function handleBlur(e: ChangeEvent<HTMLInputElement>) {
+        if (e.target.value === "") {
+            setLocalValue(min.toString())
+        }
+    }
+
     return (
         <input
-            type="number"
+            className="w-12 p-1"
             id={id}
-            min="1"
-            max="23"
-            step="1"
-            value={value}
-            onChange={(e) => setValue(e.target.value ? e.target.valueAsNumber : 1)}
+            type="number"
+            step={1}
+            pattern="[0-9]*"
+            value={localValue}
+            onChange={handleChange}
+            onBlur={handleBlur}
         />
     )
 }
