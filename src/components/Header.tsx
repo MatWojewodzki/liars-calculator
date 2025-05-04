@@ -19,7 +19,7 @@ function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
         <nav
             id="navbar"
             className={classNames(
-                "px-6 py-2 mt-5 sm:mt-0 w-full sm:w-auto sm:block bg-neutral-200 sm:bg-transparent",
+                "px-5 py-2 mt-5 sm:py-0 sm:mt-0 w-full sm:w-auto sm:block bg-neutral-200 sm:bg-transparent",
                 { "block": isMenuOpen, "hidden": !isMenuOpen})
             }
         >
