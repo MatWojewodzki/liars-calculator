@@ -32,7 +32,7 @@ function ProbabilityCase({ handShape, probability }: ProbabilityCaseProps) {
                 <div className="flex flex-col justify-center">
                     <div className="flex ps-10 flex-col items-end md:flex-row md:items-baseline md:justify-end gap-1">
                         <p className="flex flex-col justify-center text-4xl font-bold">
-                            {(probability * 100).toFixed(2)}%
+                            {probability.toFixed(3)}%
                         </p>
                         <p>
                             likely

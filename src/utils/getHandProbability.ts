@@ -40,7 +40,7 @@ export function getOneDimHandProbability(
     if (cardCount === 24) return 1
 
     cardCount--
-    return data[pokerHand][matchedCardCount][cardCount]
+     return data[pokerHand][matchedCardCount][cardCount] * 100
 }
 
 export function getTwoDimHandProbability(
@@ -55,7 +55,7 @@ export function getTwoDimHandProbability(
     if (cardCount === 24) return 1
 
     cardCount--
-    return data[pokerHand][firstCardMatchedCount][secondCardMatchedCount][cardCount]
+    return data[pokerHand][firstCardMatchedCount][secondCardMatchedCount][cardCount] * 100
 }
 
 export function getOneDimHandAllProbabilities(
