@@ -24,20 +24,21 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
     return (
         <form
             onSubmit={handleFormSubmit}
-            className="flex flex-col lg:flex-row items-stretch lg:items-baseline gap-3"
+            className="flex flex-col xl:flex-row gap-3"
         >
-            <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
-                <label htmlFor="cardCount">Number of cards on the table</label>
+            <div className="flex justify-between p-4 gap-x-3 items-baseline bg-white rounded-lg border-6 border-neutral-200">
+                <label htmlFor="cardCount">Number of cards on the table:</label>
                 <CardCountInput id="cardCount" min={1} value={cardCount} setValue={setCardCount} />
             </div>
 
-            <div className="flex justify-center p-4 gap-x-3 items-baseline bg-white rounded-lg">
-                <label htmlFor="handSize">Number of cards on your hand</label>
+            <div className="flex justify-between p-4 gap-x-3 items-baseline bg-white rounded-lg border-6 border-neutral-200">
+                <label htmlFor="handSize">Number of cards on your hand:</label>
                 <CardCountInput id="handSize" min={1} value={handSize} setValue={setHandSize} />
             </div>
-            <div className="flex justify-center p-5 items-baseline bg-white rounded-lg">
+            <div className="flex h-[82px] items-stretch bg-white rounded-lg border-6 border-neutral-200">
                 <label htmlFor="pokerHand" className="sr-only">Poker hand</label>
                 <select
+                    className="w-full mx-4 pe-4"
                     id="pokerHand"
                     value={pokerHand}
                     onChange={(e) => setPokerHand(e.target.value)}
@@ -57,9 +58,9 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             <button
                 type="submit"
                 disabled={!pokerHand}
-                className="w-full lg:w-fit p-4 lg:p-5 mt-4 lg:mt-0 lg:ms-4 rounded-lg bg-neutral-200 hover:bg-neutral-300"
+                className="w-full xl:w-fit p-4 xl:p-5 mt-4 xl:mt-0 xl:ms-4 rounded-lg bg-neutral-200 hover:bg-neutral-300"
             >
-                Calculate!
+                Calculate
             </button>
         </form>
     )

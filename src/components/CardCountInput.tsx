@@ -25,7 +25,7 @@ function CardCountInput({ id, min, value, setValue }: { id: string, min: number,
 
     return (
         <input
-            className="w-12 p-1"
+            className="w-12 p-1 rounded-md border-b-4 border-x-2 border-t-2 border-neutral-200"
             id={id}
             type="number"
             step={1}
