@@ -13,9 +13,9 @@ export const Route = createFileRoute('/hand-order')({
 function Hierarchy() {
     return (
         <div className="max-w-5xl lg:mx-auto px-4 py-16">
-            <h1 className="text-2xl font-medium font-semibold">Suggested order of poker hands according to probability</h1>
+            <h1 className="text-2xl font-semibold">Suggested order of poker hands according to probability</h1>
             <p className="mt-4">From the highest to the lowest:</p>
-            <ol className="list-decimal list-inside mt-4 ps-4 text-base/7">
+            <ol className="list-decimal list-inside mt-4 ps-4">
                 <li>Straight flush</li>
                 <li>Four of a kind</li>
                 <li>Flush</li>
@@ -60,7 +60,7 @@ function Hierarchy() {
                 only one extra card is needed. You can also see straight, two pairs and three of a kind
                 changing order when the number of cards is less than 9, but it's negligible because:
             </p>
-            <ul className="list-disc list-inside mt-4 ps-4 text-base/7">
+            <ul className="list-disc list-inside mt-4 ps-4">
                 <li>
                     Since the game is usually played by 5–8 players, the minimum number of cards on the table is
                     also 5–8.
