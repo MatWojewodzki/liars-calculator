@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
-import CardCountInput from "./CardCountInput.tsx";
+import React, {useState} from 'react'
+import CardCountInput from "./CardCountInput.tsx"
 import calculatorResultSearch, { CalculatorResultSearch } from "../schemas/calculatorResultSearch.ts"
-import {useNavigate} from "@tanstack/react-router";
+import {useNavigate} from "@tanstack/react-router"
+import classNames from "classnames"
 
 function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
 
@@ -28,12 +29,12 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
         >
             <div className="flex justify-between p-4 gap-x-3 items-baseline bg-white rounded-lg border-6 border-neutral-200">
                 <label htmlFor="cardCount">Number of cards on the table:</label>
-                <CardCountInput id="cardCount" min={1} value={cardCount} setValue={setCardCount} />
+                <CardCountInput id="cardCount" min={1} max={23} value={cardCount} setValue={setCardCount} />
             </div>
 
             <div className="flex justify-between p-4 gap-x-3 items-baseline bg-white rounded-lg border-6 border-neutral-200">
                 <label htmlFor="handSize">Number of cards on your hand:</label>
-                <CardCountInput id="handSize" min={1} value={handSize} setValue={setHandSize} />
+                <CardCountInput id="handSize" min={1} max={cardCount} value={handSize} setValue={setHandSize} />
             </div>
             <div className="flex h-[82px] items-stretch bg-white rounded-lg border-6 border-neutral-200">
                 <label htmlFor="pokerHand" className="sr-only">Poker hand</label>
@@ -58,7 +59,12 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             <button
                 type="submit"
                 disabled={!pokerHand}
-                className="w-full xl:w-fit p-4 xl:p-5 mt-4 xl:mt-0 xl:ms-4 rounded-lg bg-neutral-200 hover:bg-neutral-300"
+                className={classNames(
+                    "w-full xl:w-fit",
+                    "p-4 xl:p-5 mt-4 xl:mt-0 xl:ms-4 rounded-lg",
+                    "bg-neutral-200 hover:bg-neutral-300",
+                    "disabled:bg-neutral-200 disabled:text-neutral-500"
+                )}
             >
                 Calculate
             </button>

@@ -1,6 +1,14 @@
 import { ChangeEvent, useState } from "react"
 
-function CardCountInput({ id, min, value, setValue }: { id: string, min: number, value: number, setValue: (value: number) => void }) {
+type CardCountInputProps = {
+    id: string,
+    min: number,
+    max: number,
+    value: number,
+    setValue: (value: number) => void
+}
+
+function CardCountInput({ id, min, max, value, setValue }: CardCountInputProps) {
 
     const [localValue, setLocalValue] = useState(value.toString())
 
@@ -12,7 +20,7 @@ function CardCountInput({ id, min, value, setValue }: { id: string, min: number,
             return
         }
 
-        const newValue = Math.max(min, Math.min(23, parseInt(e.target.value)))
+        const newValue = Math.max(min, Math.min(max, parseInt(e.target.value)))
         setLocalValue(newValue.toString())
         setValue(newValue)
     }
