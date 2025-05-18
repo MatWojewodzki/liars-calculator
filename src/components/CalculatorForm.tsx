@@ -63,7 +63,8 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
                     "w-full xl:w-fit",
                     "p-4 xl:p-5 mt-4 xl:mt-0 xl:ms-4 rounded-lg",
                     "bg-neutral-200 hover:bg-neutral-300",
-                    "disabled:bg-neutral-200 disabled:text-neutral-500"
+                    "disabled:bg-neutral-200 disabled:text-neutral-500",
+                    "active:scale-98 active:bg-neutral-300"
                 )}
             >
                 Calculate

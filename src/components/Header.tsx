@@ -56,7 +56,11 @@ function Header() {
                     Liar's Calculator
                 </Link>
                 <button
-                    className="sm:hidden p-2 leading-none flex items-center justify-center h-fit rounded-lg bg-neutral-200"
+                    className={classNames(
+                        "sm:hidden p-2 leading-none flex items-center justify-center h-fit rounded-lg ",
+                        "bg-neutral-200 hover:bg-neutral-300 active:bg-neutral-300",
+                        "active:scale-98"
+                    )}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={isMenuOpen}
