@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import HandComparisonChart from "../components/charts/HandComparisonChart.tsx"
 import HandComparisonChart1Card from "../components/charts/HandComparisonChart1Card.tsx"
 import HandComparisonChart2Cards from "../components/charts/HandComparisonChart2Cards.tsx"
@@ -28,10 +28,12 @@ function Hierarchy() {
             </ol>
 
             <p className="mt-4">
-                Of course, this is just the maths and you are free to experiment and adjust it based on what do you
-                think works best and seems fair to all players.
+                Of course, this is just the maths and you should feel free to experiment and adjust it based on what
+                do you think works best and seems fair to all players.
+                Please note that this order only applies if you're using a deck of 24 cards. For more information about
+                the relevant game variant check the <Link to="/game-rules" className="underline">game rules</Link>.
             </p>
-            <h3 className="text-xl mt-12 font-medium">Probability details</h3>
+            <h2 className="text-xl mt-12 font-medium">Probability details</h2>
             <p className="mt-4">
                 The following chart shows the probability of poker hands existing on the table depending on the number
                 of cards drawn from the deck. Keep in mind that these are the odds for specific hands such as
@@ -53,7 +55,7 @@ function Hierarchy() {
                 in the player's hand as well as the most likely calls for every poker hand.
             </p>
 
-            <h4 className="text-lg mt-8 font-medium">The player has 1 card</h4>
+            <h3 className="text-lg mt-8 font-medium">The player has 1 card</h3>
             <HandComparisonChart1Card />
             <p className="mt-4">
                 As expected the odds for a pair call being correct increased much more than for the straight since now
@@ -69,13 +71,13 @@ function Hierarchy() {
                 <li>The odds are very close to each other anyway.</li>
             </ul>
 
-            <h4 className="text-lg mt-8 font-medium">The player has 2 cards</h4>
+            <h3 className="text-lg mt-8 font-medium">The player has 2 cards</h3>
             <p className="mt-4">
                 We assume that the cards have different ranks (87% likely) and different suits (78% likely).
             </p>
             <HandComparisonChart2Cards />
 
-            <h4 className="text-lg mt-8 font-medium">The player has 3 cards</h4>
+            <h3 className="text-lg mt-8 font-medium">The player has 3 cards</h3>
             <p className="mt-4">
                 Once again, we assume that the cards include 3 different ranks (63% likely), but there are only 2
                 distinct suits among them (1 pair + 1 unique, 53% likely).
@@ -86,7 +88,7 @@ function Hierarchy() {
                 are almost equal and very high.
             </p>
 
-            <h4 className="text-lg mt-8 font-medium">The player has 4 cards</h4>
+            <h3 className="text-lg mt-8 font-medium">The player has 4 cards</h3>
             <p className="mt-4">
                 This time, we assume that the cards include 3 different ranks (1 pair + 2 unique, 54% likely)
                 and 3 distinct suits (1 pair + 2 unique, 61% likely).
@@ -98,7 +100,7 @@ function Hierarchy() {
                 which means the odds are similar or straight becomes more likely again.
             </p>
 
-            <h4 className="text-lg mt-8 font-medium">The player has 5 cards</h4>
+            <h3 className="text-lg mt-8 font-medium">The player has 5 cards</h3>
             <p className="mt-4">
                 Again, we assume that the cards include 3 different ranks (1 pair + 3 unique, 54% likely)
                 and 3 distinct suits (2 pairs + 1 unique, 38% likely).
@@ -109,7 +111,7 @@ function Hierarchy() {
                 odds are very close.
             </p>
 
-            <h4 className="text-lg mt-8 font-medium">Conclusion</h4>
+            <h3 className="text-lg mt-8 font-medium">Conclusion</h3>
             <p className="mt-4">
                 Cases presented above confirm that the likelihood of making a true straight call lies between one
                 pair and two pair. The order of the other hands remains the same as in the general probability chart.
