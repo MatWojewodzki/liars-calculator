@@ -45,15 +45,15 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
                     onChange={(e) => setPokerHand(e.target.value)}
                 >
                     <option value="" hidden>Select a poker hand</option>
-                    <option value="highCard">High card</option>
-                    <option value="pair">Pair</option>
-                    <option value="twoPair">Two pair</option>
-                    <option value="straight">Straight</option>
-                    <option value="threeOfAKind">Three of a kind</option>
-                    <option value="fullHouse">Full house</option>
-                    <option value="flush">Flush</option>
-                    <option value="fourOfAKind">Four of a kind</option>
-                    <option value="straightFlush">Straight flush</option>
+                    <option value="highCard">high card</option>
+                    <option value="pair">pair</option>
+                    <option value="twoPair">two pair</option>
+                    <option value="straight">straight</option>
+                    <option value="threeOfAKind">three of a kind</option>
+                    <option value="fullHouse">full house</option>
+                    <option value="flush">flush</option>
+                    <option value="fourOfAKind">four of a kind</option>
+                    <option value="straightFlush">straight flush</option>
                 </select>
             </div>
             <button
