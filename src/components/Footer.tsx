@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 function currentYear(): string {
     const year = new Date().getFullYear()
     return year === 2025 ? "" : `-${year}`
@@ -6,7 +8,11 @@ function currentYear(): string {
 
 function Footer() {
     return (
-        <footer className="text-center bg-neutral-50 h-64 flex items-center justify-center">
+        <footer className={classNames(
+            "text-center  h-64",
+            "bg-linear-to-t from-neutral-50 to-neutral-100",
+            "flex items-center justify-center"
+        )}>
             Liar's Calculator &copy; 2025{currentYear()} Mateusz Wojewódzki
         </footer>
     )

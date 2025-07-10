@@ -9,7 +9,7 @@ function Index() {
 
     return (
         <div className="grow flex flex-col">
-            <section className="py-16 px-4 flex flex-col items-center bg-neutral-50">
+            <section className="py-16 px-4 flex flex-col items-center bg-linear-to-b from-neutral-50 to-neutral-100">
 
                 <h1 className="text-center font-extrabold text-5xl">Calculate the odds in Liar's Poker card game</h1>
                 <p className="text-center text-2xl mt-2 mb-12">The exact probability of every poker hand assuming a 24-card deck is used.</p>

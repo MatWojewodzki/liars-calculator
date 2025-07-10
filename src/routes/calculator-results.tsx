@@ -14,7 +14,7 @@ function RouteComponent() {
 
     return (
         <div className="grow flex flex-col">
-            <section className="py-16 px-1 flex flex-col items-center bg-neutral-50">
+            <section className="py-16 px-1 flex flex-col items-center bg-linear-to-b from-neutral-50 to-neutral-100">
                 <CalculatorForm search={search} />
             </section>
             <section className="grow flex flex-col py-16 md:px-5 lg:px-8 xl:px-11">
