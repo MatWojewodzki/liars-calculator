@@ -4,6 +4,7 @@ import {getOneDimHandVariants, getTwoDimHandVariants} from "../utils/getHandVari
 import {OneDimensionalPokerHand, TwoDimensionalPokerHand} from "../schemas/pokerHand.ts"
 import ProbabilityCase from "./ProbabilityCase.tsx";
 import { getOneDimHandProbability, getTwoDimHandProbability } from "../utils/getHandProbability.ts"
+import getHandName from "../utils/getHandName.ts"
 
 const oneDimTotalCardCounts = {
     highCard: 1,
@@ -27,8 +28,8 @@ function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorResultS
     return (
         <>
             <section className="mb-12">
-                <h2 className="text-center font-semibold text-2xl">Your odds</h2>
-                <p className="text-center">Depending on the cards in your hand, if...</p>
+                <h2 className="text-center font-semibold text-2xl">The odds of a specific {getHandName(pokerHand)}</h2>
+                <p className="text-center">depending on the cards in your hand</p>
             </section>
             <section className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12">
                 {handDimension === 1 ? (
