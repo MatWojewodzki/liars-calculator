@@ -39,6 +39,11 @@ function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
                         Game rules
                     </NavigationLink>
                 </li>
+                <li>
+                    <NavigationLink to="/data-source">
+                        Data source
+                    </NavigationLink>
+                </li>
             </ul>
         </nav>
     )

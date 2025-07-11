@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as HandOrderImport } from './routes/hand-order'
 import { Route as GameRulesImport } from './routes/game-rules'
+import { Route as DataSourceImport } from './routes/data-source'
 import { Route as CalculatorResultsImport } from './routes/calculator-results'
 import { Route as IndexImport } from './routes/index'
 
@@ -27,6 +28,12 @@ const HandOrderRoute = HandOrderImport.update({
 const GameRulesRoute = GameRulesImport.update({
   id: '/game-rules',
   path: '/game-rules',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DataSourceRoute = DataSourceImport.update({
+  id: '/data-source',
+  path: '/data-source',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorResultsImport
       parentRoute: typeof rootRoute
     }
+    '/data-source': {
+      id: '/data-source'
+      path: '/data-source'
+      fullPath: '/data-source'
+      preLoaderRoute: typeof DataSourceImport
+      parentRoute: typeof rootRoute
+    }
     '/game-rules': {
       id: '/game-rules'
       path: '/game-rules'
@@ -82,6 +96,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/calculator-results': typeof CalculatorResultsRoute
+  '/data-source': typeof DataSourceRoute
   '/game-rules': typeof GameRulesRoute
   '/hand-order': typeof HandOrderRoute
 }
@@ -89,6 +104,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calculator-results': typeof CalculatorResultsRoute
+  '/data-source': typeof DataSourceRoute
   '/game-rules': typeof GameRulesRoute
   '/hand-order': typeof HandOrderRoute
 }
@@ -97,22 +113,40 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/calculator-results': typeof CalculatorResultsRoute
+  '/data-source': typeof DataSourceRoute
   '/game-rules': typeof GameRulesRoute
   '/hand-order': typeof HandOrderRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/calculator-results' | '/game-rules' | '/hand-order'
+  fullPaths:
+    | '/'
+    | '/calculator-results'
+    | '/data-source'
+    | '/game-rules'
+    | '/hand-order'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/calculator-results' | '/game-rules' | '/hand-order'
-  id: '__root__' | '/' | '/calculator-results' | '/game-rules' | '/hand-order'
+  to:
+    | '/'
+    | '/calculator-results'
+    | '/data-source'
+    | '/game-rules'
+    | '/hand-order'
+  id:
+    | '__root__'
+    | '/'
+    | '/calculator-results'
+    | '/data-source'
+    | '/game-rules'
+    | '/hand-order'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CalculatorResultsRoute: typeof CalculatorResultsRoute
+  DataSourceRoute: typeof DataSourceRoute
   GameRulesRoute: typeof GameRulesRoute
   HandOrderRoute: typeof HandOrderRoute
 }
@@ -120,6 +154,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CalculatorResultsRoute: CalculatorResultsRoute,
+  DataSourceRoute: DataSourceRoute,
   GameRulesRoute: GameRulesRoute,
   HandOrderRoute: HandOrderRoute,
 }
@@ -136,6 +171,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/calculator-results",
+        "/data-source",
         "/game-rules",
         "/hand-order"
       ]
@@ -145,6 +181,9 @@ export const routeTree = rootRoute
     },
     "/calculator-results": {
       "filePath": "calculator-results.tsx"
+    },
+    "/data-source": {
+      "filePath": "data-source.tsx"
     },
     "/game-rules": {
       "filePath": "game-rules.tsx"
