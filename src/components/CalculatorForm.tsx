@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
-import CardCountInput from "./CardCountInput.tsx"
+import CardCountInput from "./form-inputs/CardCountInput.tsx"
+import PokerHandSelect from "./form-inputs/PokerHandSelect.tsx"
 import calculatorResultSearch, { CalculatorResultSearch } from "../schemas/calculatorResultSearch.ts"
 import {useNavigate} from "@tanstack/react-router"
 import classNames from "classnames"
+import {PokerHand} from "../schemas/pokerHand.ts";
 
 function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
 
@@ -10,7 +12,7 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
 
     const [cardCount, setCardCount] = useState(search?.cardCount || 1)
     const [handSize, setHandSize] = useState(search?.handSize || 1)
-    const [pokerHand, setPokerHand] = useState(search?.pokerHand || "")
+    const [pokerHand, setPokerHand] = useState<PokerHand | "">(search?.pokerHand || "")
 
     const [cardCountLocal, setCardCountLocal] = useState(cardCount.toString())
     const [handSizeLocal, setHandSizeLocal] = useState(handSize.toString())
@@ -81,23 +83,10 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             </div>
             <div className="flex h-[82px] items-stretch bg-white rounded-lg border-6 border-neutral-200">
                 <label htmlFor="pokerHand" className="sr-only">Poker hand</label>
-                <select
-                    className="w-full mx-4 pe-4"
-                    id="pokerHand"
+                <PokerHandSelect
                     value={pokerHand}
-                    onChange={(e) => setPokerHand(e.target.value)}
-                >
-                    <option value="" hidden>Select a poker hand</option>
-                    <option value="highCard">high card</option>
-                    <option value="pair">pair</option>
-                    <option value="twoPair">two pair</option>
-                    <option value="straight">straight</option>
-                    <option value="threeOfAKind">three of a kind</option>
-                    <option value="fullHouse">full house</option>
-                    <option value="flush">flush</option>
-                    <option value="fourOfAKind">four of a kind</option>
-                    <option value="straightFlush">straight flush</option>
-                </select>
+                    setValue={setPokerHand}
+                />
             </div>
             <button
                 type="submit"
@@ -107,7 +96,8 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
                     "p-4 xl:p-5 mt-4 xl:mt-0 xl:ms-4 rounded-lg",
                     "bg-neutral-200 hover:bg-neutral-300",
                     "disabled:bg-neutral-200 disabled:text-neutral-500",
-                    "active:scale-98 active:bg-neutral-300"
+                    "active:scale-98 active:bg-neutral-300",
+                    "font-semibold"
                 )}
             >
                 Calculate
