@@ -9,17 +9,20 @@ type ProbabilityCaseProps = {
     probability: number
 }
 
-function createHint(cardGroupData: CardGroupData) {
+function createHint(cardGroupData: CardGroupData, isSecondHint: boolean) {
     const {matchingCardCount: matching, totalCardCount: total} = cardGroupData
-    return `${matching > 0 ? `${matching} out` : "none"} of the ${total} card${total > 1 ? "s" : ""} match${matching == 1 ? "es" : ""}`
+    if (total === 1) {
+        return matching === 1 ? "you own the card" : "you don't own the card"
+    }
+    return `${isSecondHint ? "" : "you own "}${matching > 0 ? matching : "none"} of the ${total}${isSecondHint ? " other" : ""} cards required`
 }
 
 function ProbabilityCase({ handShape, probability }: ProbabilityCaseProps) {
 
     const { cardGroup1Data, cardGroup2Data } = handShape
 
-    const hint1 = createHint(cardGroup1Data)
-    const hint2 = cardGroup2Data ? createHint(cardGroup2Data) : null
+    const hint1 = createHint(cardGroup1Data, false)
+    const hint2 = cardGroup2Data ? createHint(cardGroup2Data, true) : null
 
     const hint = hint2 ? `${hint1} and ${hint2}` : hint1
 
