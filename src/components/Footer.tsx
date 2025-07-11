@@ -8,12 +8,18 @@ function currentYear(): string {
 
 function Footer() {
     return (
-        <footer className={classNames(
-            "text-center  h-64",
-            "bg-linear-to-t from-neutral-50 to-neutral-100",
-            "flex items-center justify-center"
-        )}>
-            Liar's Calculator &copy; 2025{currentYear()} Mateusz Wojewódzki
+        <footer
+            className={classNames(
+                "text-center py-16",
+                "bg-linear-to-t from-neutral-50 to-neutral-100",
+                "flex flex-col items-center justify-center gap-2"
+            )}
+        >
+            <p>Liar's Calculator &copy; 2025{currentYear()} Mateusz Wojewódzki</p>
+            <p className="text-sm text-neutral-500">Source code available on <a
+                href="https://github.com/MatWojewodzki/liars-calculator"
+                className="underline"
+            >GitHub</a></p>
         </footer>
     )
 }
