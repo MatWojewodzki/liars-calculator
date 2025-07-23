@@ -7,7 +7,7 @@ export const Route = createFileRoute('/game-rules')({
 function GameRules() {
     return (
         <div className="max-w-5xl lg:mx-auto px-4 py-16">
-            <h1 className="text-2xl font-semibold">The rules of liar's poker</h1>
+            <h1 className="text-2xl font-semibold">The rules of liar's poker card game</h1>
             <p className="mt-4">
                 Liar's poker is a card game that relates to poker. One of it's greatest advantages is the degree
                 of freedom in terms of the number of players. You may find dozens of different variants of the game
@@ -56,26 +56,26 @@ function GameRules() {
             </p>
             <ol className="list-decimal list-inside mt-4 ps-4">
                 <li>
-                    Royal flush - (<i className="italic">rank</i>) - ranks range from 10 to A
+                    Royal flush (<i className="italic">rank</i>) - ranks range from 10 to A
                 </li>
                 <li>
-                    Straight flush - (<i className="italic">rank</i>) - ranks range from 9 to K
+                    Straight flush (<i className="italic">rank</i>) - ranks range from 9 to K
                 </li>
                 <li>
-                    Four of a kind - (<i className="italic">rank</i>)
+                    Four of a kind (<i className="italic">rank</i>)
                 </li>
                 <li>
-                    Flush - (<i className="italic">suit</i>)
+                    Flush (<i className="italic">suit</i>)
                 </li>
                 <li>
-                    Full house - (<i className="italic">rank</i>, <i className="italic">rank</i>) - the rank
+                    Full house (<i className="italic">rank</i>, <i className="italic">rank</i>) - the rank
                     specifying the three cards is the more important parameter
                 </li>
                 <li>
-                    Three of a kind - (<i className="italic">rank</i>)
+                    Three of a kind (<i className="italic">rank</i>)
                 </li>
                 <li>
-                    Two pair - (<i className="italic">rank</i>, <i className="italic">rank</i>) - the higher
+                    Two pair (<i className="italic">rank</i>, <i className="italic">rank</i>) - the higher
                     rank is the more important parameter
                 </li>
                 <li>
@@ -85,10 +85,10 @@ function GameRules() {
                     Small straight - ranks range from 9 to K
                 </li>
                 <li>
-                    Pair - (<i className="italic">rank</i>)
+                    Pair (<i className="italic">rank</i>)
                 </li>
                 <li>
-                    High card - (<i className="italic">rank</i>)
+                    High card (<i className="italic">rank</i>)
                 </li>
             </ol>
             <p className="mt-4">
