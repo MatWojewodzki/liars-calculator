@@ -94,9 +94,10 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
                 className={classNames(
                     "w-full xl:w-fit",
                     "p-4 xl:p-5 mt-4 xl:mt-0 xl:ms-4 rounded-lg",
-                    "bg-neutral-200 hover:bg-neutral-300",
+                    "bg-neutral-200",
                     "disabled:bg-neutral-200 disabled:text-neutral-500",
-                    "active:scale-98 active:bg-neutral-300",
+                    "not-disabled:hover:bg-neutral-300",
+                    "not-disabled:active:scale-98 not-disabled:active:bg-neutral-300",
                     "font-semibold"
                 )}
             >
