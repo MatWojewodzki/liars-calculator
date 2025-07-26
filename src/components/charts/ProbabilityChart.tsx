@@ -1,6 +1,7 @@
 import { Chart } from 'react-chartjs-2'
 import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Legend, Tooltip, ChartData } from 'chart.js'
 import useWindowWidth from "../../hooks/useWindowWidth.ts";
+import getChartColor from "../../utils/getChartColor.ts";
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Legend, Tooltip)
 
@@ -15,6 +16,13 @@ function ProbabilityChart({data, title}: LineChartProps) {
 
     const smBreakpoint = windowWidth >= 640
     const lgBreakpoint = windowWidth >= 1024
+
+    // Apply color palette
+    data.datasets = data.datasets.map((dataset, index) => ({
+        ...dataset,
+        borderColor: getChartColor(index),
+        backgroundColor: getChartColor(index)
+    }))
 
     return (
         <div className="mt-4 w-full h-96 md:h-128">
