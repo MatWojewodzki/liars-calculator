@@ -4,43 +4,44 @@ import { useState } from "react"
 import MaterialSymbol from "./MaterialSymbol.tsx"
 import classNames from "classnames"
 
-function NavigationLink({ to, children }: Pick<LinkProps, "to"> & { children: ReactNode }) {
+function NavigationLink({ to, children, onClick }: Pick<LinkProps, "to"> & { children: ReactNode, onClick: () => void }) {
     return <Link
         to={to}
         className="hover:underline underline-offset-3 decoration-2"
         activeProps={{ className: "underline" }}
+        onClick={onClick}
     >
         {children}
     </Link>
 }
 
-function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
+function Navbar({ isMenuOpen, onLinkClick }: { isMenuOpen: boolean, onLinkClick: () => void }) {
     return (
         <nav
             id="navbar"
             className={classNames(
-                "px-5 py-2 mt-5 sm:py-0 sm:mt-0 w-full sm:w-auto sm:block bg-neutral-200 sm:bg-transparent",
+                "px-5 py-2 mt-5 sm:py-0 sm:mt-0 w-full sm:w-auto sm:block",
                 { "block": isMenuOpen, "hidden": !isMenuOpen})
             }
         >
-            <ul className="flex flex-col gap-y-1 sm:flex-row sm:gap-x-5 items-baseline">
+            <ul className="flex flex-col gap-y-6 sm:flex-row sm:gap-x-5 items-baseline">
                 <li>
-                    <NavigationLink to="/">
+                    <NavigationLink onClick={onLinkClick} to="/">
                         Home
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink to="/hand-order">
+                    <NavigationLink onClick={onLinkClick} to="/hand-order">
                         Poker hand order
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink to="/game-rules">
+                    <NavigationLink onClick={onLinkClick} to="/game-rules">
                         Game rules
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink to="/data-source">
+                    <NavigationLink onClick={onLinkClick} to="/data-source">
                         Data source
                     </NavigationLink>
                 </li>
@@ -53,6 +54,8 @@ function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
 function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const onLinkClick = () => setIsMenuOpen(false)
 
     return (
         <header className="flex flex-col sm:flex-row justify-between py-5 items-baseline bg-neutral-50">
@@ -74,7 +77,7 @@ function Header() {
                     <MaterialSymbol iconName={isMenuOpen ? "close" : "menu"} />
                 </button>
             </div>
-            <NavBar isMenuOpen={isMenuOpen} />
+            <Navbar isMenuOpen={isMenuOpen} onLinkClick={onLinkClick} />
         </header>
     )
 }
