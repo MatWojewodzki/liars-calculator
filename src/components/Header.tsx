@@ -31,8 +31,8 @@ function Navbar({ isMenuOpen, onLinkClick }: { isMenuOpen: boolean, onLinkClick:
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink onClick={onLinkClick} to="/hand-order">
-                        Poker hand order
+                    <NavigationLink onClick={onLinkClick} to="/hand-ranking">
+                        Poker hand ranking
                     </NavigationLink>
                 </li>
                 <li>

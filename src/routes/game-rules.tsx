@@ -93,7 +93,7 @@ function GameRules() {
             </ol>
             <p className="mt-4">
                 You will find the reasoning behind this order in
-                the <Link to="/hand-order" className="underline">poker hand order</Link> section.
+                the <Link to="/hand-ranking" className="underline">poker hand order</Link> section.
             </p>
             <h2 className="text-xl mt-12 font-medium">Alternative rules</h2>
             <ul className="list-disc list-inside mt-4 ps-4">

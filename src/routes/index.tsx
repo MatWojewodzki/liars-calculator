@@ -29,7 +29,7 @@ function Index() {
                     </InfoSection>
                     <InfoSection header="Analyze the poker hands">
                         Have you always wondered what the poker hand order should be? Check out
-                        our <Link to="/hand-order" className="underline">analysis</Link>.
+                        our <Link to="/hand-ranking" className="underline">analysis</Link>.
                     </InfoSection>
                     <InfoSection header="Learn the rules">
                         Not sure how to play liar's poker yet? Go check out

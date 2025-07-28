@@ -55,13 +55,13 @@ function ProbabilityChart({data, title}: LineChartProps) {
                         x: {
                             title: {
                                 display: true,
-                                text: "Number of cards drawn from the deck"
+                                text: "number of cards on the table"
                             }
                         },
                         y: {
                             title: {
                                 display: true,
-                                text: "Probability [%]",
+                                text: "probability [%]",
                                 padding: smBreakpoint ? undefined : 0
                             }
                         }
