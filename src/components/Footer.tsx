@@ -18,12 +18,28 @@ function Footer() {
             <p className="text-sm">
                 Liar's Calculator &copy; 2025{currentYear()} Mateusz Wojewódzki
             </p>
-            <p className="text-sm text-neutral-500">
-                Source code available on <a
-                    href="https://github.com/MatWojewodzki/liars-calculator"
-                    className="underline"
-                >GitHub</a>
-            </p>
+            <div className="flex flex-col gap-1">
+                <p className="text-sm text-neutral-500">
+                    The content on this website is licensed
+                    under the{" "}
+                    <a
+                        href="https://creativecommons.org/licenses/by-nc/4.0/"
+                        className="underline"
+                    >
+                        CC BY-NC 4.0
+                    </a>.
+                </p>
+                <p className="text-sm text-neutral-500">
+                    The source code is available on{" "}
+                    <a
+                        href="https://github.com/MatWojewodzki/liars-calculator"
+                        className="underline"
+                    >
+                        GitHub
+                    </a>.
+                </p>
+            </div>
+
         </footer>
     )
 }

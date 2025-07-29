@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# Liar's Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Liar's Calculator is a website allowing you to check the exact probability of a player's guess being correct
+in a liar's poker card game. It also features a description of the game rules
+and a poker hand ranking advised according to probability.
+All the probability data presented on this website has been calculated using a Python script available
+on [GitHub](https://github.com/MatWojewodzki/liars-poker-probabilities/blob/main/probability_data_generator.py).
 
-Currently, two official plugins are available:
+## Disclaimer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The probability data provided on this website has not been verified for accuracy or completeness.
+The website is intended for educational and illustrative purposes only — not as gambling advice
+or a guarantee of outcomes.
 
-## Expanding the ESLint configuration
+## Running the website locally
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the git repository:
+    ```bash
+   git clone https://github.com/MatWojewodzki/liars-calculator
+   cd liars-calculator/
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. Install the required dependencies by running:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    ```bash
+    npm install
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Start a local development server using Vite by running:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+    ```bash
+    npm run dev
+    ```
+
+4. Open your browser and navigate to `http://localhost:5000/`.
+
+5. Optional: To build the project for production, use:
+
+    ```bash
+    npm run build
+    ```
+
+6. After building, you can serve the production build locally by using:
+
+    ```bash
+    npm run preview
+    ```
+
+## License
+
+The source code is licensed under the [MIT License](LICENSE).
+
+The website content (text, plots and data) is licensed under the
+[Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
