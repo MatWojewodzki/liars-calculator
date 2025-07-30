@@ -41,8 +41,8 @@ function Navbar({ isMenuOpen, onLinkClick }: { isMenuOpen: boolean, onLinkClick:
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink onClick={onLinkClick} to="/data-source">
-                        Data source
+                    <NavigationLink onClick={onLinkClick} to="/about">
+                        About
                     </NavigationLink>
                 </li>
             </ul>
