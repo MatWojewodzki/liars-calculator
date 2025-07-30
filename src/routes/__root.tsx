@@ -1,6 +1,7 @@
-import {createRootRoute, Link, Outlet} from '@tanstack/react-router'
+import {createRootRoute, Outlet} from '@tanstack/react-router'
 import Header from '../components/Header.tsx'
 import Footer from '../components/Footer.tsx'
+import ErrorPage from '../components/ErrorPage.tsx'
 
 export const Route = createRootRoute({
     component: () => (
@@ -12,20 +13,7 @@ export const Route = createRootRoute({
             <Footer />
         </div>
     ),
-    notFoundComponent: NotFound,
+    notFoundComponent: () => (
+        <ErrorPage header="404" description="The page you are looking for does not exist."/>
+    ),
 })
-
-function NotFound() {
-    return (
-        <div className="grow flex flex-col items-center justify-center gap-12 px-4">
-            <h1 className="text-7xl font-bold">404</h1>
-            <p>
-                ← Return to the{" "}
-                <Link to="/" className="underline">
-                    home page
-                </Link>
-                .
-            </p>
-        </div>
-    )
-}

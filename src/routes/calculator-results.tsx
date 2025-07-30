@@ -1,11 +1,15 @@
-import {createFileRoute} from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import calculatorResultSearch from '../schemas/calculatorResultSearch.ts'
 import CalculatorResults from '../components/CalculatorResults.tsx'
-import CalculatorForm from "../components/CalculatorForm.tsx";
+import CalculatorForm from "../components/CalculatorForm.tsx"
+import ErrorPage from "../components/ErrorPage.tsx"
 
 export const Route = createFileRoute('/calculator-results')({
     component: RouteComponent,
     validateSearch: calculatorResultSearch,
+    errorComponent: () => (
+        <ErrorPage header="Invalid URL" description="The provided URL is invalid, so we can't display the results." />
+    ),
 })
 
 function RouteComponent() {
