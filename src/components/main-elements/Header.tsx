@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { Link, LinkProps } from "@tanstack/react-router"
 import { useState } from "react"
-import MaterialSymbol from "./MaterialSymbol.tsx"
+import MaterialSymbol from "../common/MaterialSymbol.tsx"
 import classNames from "classnames"
 
 function NavigationLink({ to, children, onClick }: Pick<LinkProps, "to"> & { children: ReactNode, onClick: () => void }) {

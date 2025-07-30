@@ -1,4 +1,4 @@
-import MaterialSymbol from "./MaterialSymbol.tsx"
+import MaterialSymbol from "../common/MaterialSymbol.tsx"
 import classNames from "classnames"
 
 function PlayingCard({ isMatching }: { isMatching: boolean }) {

@@ -1,7 +1,7 @@
 import {createRootRoute, Outlet} from '@tanstack/react-router'
-import Header from '../components/Header.tsx'
-import Footer from '../components/Footer.tsx'
-import ErrorPage from '../components/ErrorPage.tsx'
+import Header from '../components/main-elements/Header.tsx'
+import Footer from '../components/main-elements/Footer.tsx'
+import ErrorPage from '../components/main-elements/ErrorPage.tsx'
 
 export const Route = createRootRoute({
     component: () => (

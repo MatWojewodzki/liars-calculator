@@ -1,10 +1,10 @@
-import type { CalculatorResultSearch } from "../schemas/calculatorResultSearch.ts"
-import getHandDimension from "../utils/getHandDimension.ts"
-import {getOneDimHandVariants, getTwoDimHandVariants} from "../utils/getHandVariants.ts"
-import {OneDimensionalPokerHand, TwoDimensionalPokerHand} from "../schemas/pokerHand.ts"
+import type { CalculatorResultSearch } from "../../schemas/calculatorResultSearch.ts"
+import getHandDimension from "../../utils/getHandDimension.ts"
+import {getOneDimHandVariants, getTwoDimHandVariants} from "../../utils/getHandVariants.ts"
+import {OneDimensionalPokerHand, TwoDimensionalPokerHand} from "../../schemas/pokerHand.ts"
 import ProbabilityCase from "./ProbabilityCase.tsx";
-import { getOneDimHandProbability, getTwoDimHandProbability } from "../utils/getHandProbability.ts"
-import getHandName from "../utils/getHandName.ts"
+import { getOneDimHandProbability, getTwoDimHandProbability } from "../../utils/getHandProbability.ts"
+import getHandName from "../../utils/getHandName.ts"
 
 const oneDimTotalCardCounts = {
     highCard: 1,

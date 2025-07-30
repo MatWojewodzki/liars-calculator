@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import CardCountInput from "./form-inputs/CardCountInput.tsx"
-import PokerHandSelect from "./form-inputs/PokerHandSelect.tsx"
-import calculatorResultSearch, { CalculatorResultSearch } from "../schemas/calculatorResultSearch.ts"
+import CardCountInput from "./CardCountInput.tsx"
+import PokerHandSelect from "./PokerHandSelect.tsx"
+import calculatorResultSearch, { CalculatorResultSearch } from "../../schemas/calculatorResultSearch.ts"
 import {useNavigate} from "@tanstack/react-router"
 import classNames from "classnames"
-import {PokerHand} from "../schemas/pokerHand.ts";
+import {PokerHand} from "../../schemas/pokerHand.ts";
 
 function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
 

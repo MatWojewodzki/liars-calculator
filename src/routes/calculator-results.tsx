@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import calculatorResultSearch from '../schemas/calculatorResultSearch.ts'
-import CalculatorResults from '../components/CalculatorResults.tsx'
-import CalculatorForm from "../components/CalculatorForm.tsx"
-import ErrorPage from "../components/ErrorPage.tsx"
+import CalculatorResults from '../components/calculator-results/CalculatorResults.tsx'
+import CalculatorForm from "../components/calculator-form/CalculatorForm.tsx"
+import ErrorPage from "../components/main-elements/ErrorPage.tsx"
 
 export const Route = createFileRoute('/calculator-results')({
     component: RouteComponent,

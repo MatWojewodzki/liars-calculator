@@ -1,4 +1,4 @@
-import PlayingCard from "./PlayingCard"
+import PlayingCard from "./PlayingCard.tsx"
 
 export type CardGroupData = { matchingCardCount: number, totalCardCount: number }
 

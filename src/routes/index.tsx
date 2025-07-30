@@ -1,5 +1,5 @@
 import {createFileRoute, Link} from '@tanstack/react-router'
-import CalculatorForm from "../components/CalculatorForm.tsx"
+import CalculatorForm from "../components/calculator-form/CalculatorForm.tsx"
 import {ReactNode} from "react";
 import classNames from "classnames";
 
