@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import StandardExternalLink from "../common/StandardExternalLink.tsx";
 
 function currentYear(): string {
     const year = new Date().getFullYear()
@@ -22,21 +23,19 @@ function Footer() {
                 <p className="text-sm text-neutral-500">
                     The content on this website is licensed
                     under the{" "}
-                    <a
+                    <StandardExternalLink
                         href="https://creativecommons.org/licenses/by-nc/4.0/"
-                        className="underline"
                     >
                         CC BY-NC 4.0
-                    </a>.
+                    </StandardExternalLink>.
                 </p>
                 <p className="text-sm text-neutral-500">
                     The source code is available on{" "}
-                    <a
+                    <StandardExternalLink
                         href="https://github.com/MatWojewodzki/liars-calculator"
-                        className="underline"
                     >
                         GitHub
-                    </a>.
+                    </StandardExternalLink>.
                 </p>
             </div>
 

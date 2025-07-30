@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import StandardExternalLink from "../components/common/StandardExternalLink.tsx"
 
 export const Route = createFileRoute('/about')({
     component: About,
@@ -14,12 +15,11 @@ function About() {
                 and a poker hand ranking advised according to probability.
                 All the probability data presented on this website has been calculated using a Python script available
                 on{" "}
-                <a
+                <StandardExternalLink
                     href="https://github.com/MatWojewodzki/liars-poker-probabilities/blob/main/probability_data_generator.py"
-                    className="underline"
                 >
                     GitHub
-                </a>
+                </StandardExternalLink>
                 .
             </p>
             <p className="mt-4 italic">

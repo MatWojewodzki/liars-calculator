@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router"
+import StandardInternalLink from "../common/StandardInternalLink.tsx"
 
 function ErrorPage({ header, description }: { header: string, description: string }) {
     return (
@@ -11,9 +11,9 @@ function ErrorPage({ header, description }: { header: string, description: strin
                     {description}
                 </p>
                 <p>
-                    <Link to="/" className="underline">
+                    <StandardInternalLink to="/">
                         ← Return to the home page
-                    </Link>
+                    </StandardInternalLink>
                 </p>
             </div>
         </div>

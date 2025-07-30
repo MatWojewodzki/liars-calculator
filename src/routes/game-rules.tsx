@@ -1,4 +1,5 @@
-import {createFileRoute, Link} from "@tanstack/react-router"
+import {createFileRoute} from "@tanstack/react-router"
+import StandardInternalLink from "../components/common/StandardInternalLink.tsx"
 
 export const Route = createFileRoute('/game-rules')({
     component: GameRules,
@@ -92,8 +93,9 @@ function GameRules() {
                 </li>
             </ol>
             <p className="mt-4">
-                You will find the reasoning behind this order in
-                the <Link to="/hand-ranking" className="underline">poker hand order</Link> section.
+                You will find the reasoning behind this order in the{" "}
+                <StandardInternalLink to="/hand-ranking">poker hand order</StandardInternalLink>{" "}
+                section.
             </p>
             <h2 className="text-xl mt-12 font-medium">Alternative rules</h2>
             <ul className="list-disc list-inside mt-4 ps-4">

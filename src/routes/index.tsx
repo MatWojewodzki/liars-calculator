@@ -1,7 +1,8 @@
-import {createFileRoute, Link} from '@tanstack/react-router'
+import {createFileRoute} from '@tanstack/react-router'
 import CalculatorForm from "../components/calculator-form/CalculatorForm.tsx"
 import {ReactNode} from "react";
 import classNames from "classnames";
+import StandardInternalLink from "../components/common/StandardInternalLink.tsx"
 
 export const Route = createFileRoute('/')({
     component: Index
@@ -28,12 +29,14 @@ function Index() {
                         Check the odds in our calculator instantly.
                     </InfoSection>
                     <InfoSection header="Analyze the poker hands">
-                        Have you always wondered what the poker hand order should be? Check out
-                        our <Link to="/hand-ranking" className="underline">analysis</Link>.
+                        Have you always wondered what the poker hand order should be? Check out our{" "}
+                        <StandardInternalLink to="/hand-ranking">analysis</StandardInternalLink>
+                        .
                     </InfoSection>
                     <InfoSection header="Learn the rules">
-                        Not sure how to play liar's poker yet? Go check out
-                        the <Link to="/game-rules" className="underline">game rules</Link>.
+                        Not sure how to play liar's poker yet? Go check out the{" "}
+                        <StandardInternalLink to="/game-rules">game rules</StandardInternalLink>
+                        .
                     </InfoSection>
                 </section>
             </div>

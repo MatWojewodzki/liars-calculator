@@ -1,6 +1,7 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import HandComparisonChart from "../components/charts/HandComparisonChart.tsx"
-import PairStraightComparisonChart from "../components/charts/PairStraightComparisonChart.tsx";
+import PairStraightComparisonChart from "../components/charts/PairStraightComparisonChart.tsx"
+import StandardInternalLink from "../components/common/StandardInternalLink.tsx"
 
 export const Route = createFileRoute('/hand-ranking')({
   component: Hierarchy,
@@ -30,7 +31,9 @@ function Hierarchy() {
                 Of course, this is just the maths and you should feel free to experiment and adjust it based on what
                 do you think works best and seems fair to all players. Please note that this ranking was created
                 on the assumption that we are using a 24-card deck. For more information about the relevant game
-                variant check the <Link to="/game-rules" className="underline">game rules</Link>.
+                variant check the{" "}
+                <StandardInternalLink to="/game-rules">game rules</StandardInternalLink>
+                .
             </p>
             <h2 className="text-xl mt-12 font-medium">Probability details</h2>
             <p className="mt-4">
