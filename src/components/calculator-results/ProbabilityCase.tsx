@@ -12,9 +12,9 @@ type ProbabilityCaseProps = {
 function createHint(cardGroupData: CardGroupData, isSecondHint: boolean) {
     const {matchingCardCount: matching, totalCardCount: total} = cardGroupData
     if (total === 1) {
-        return matching === 1 ? "you own the card" : "you don't own the card"
+        return matching === 1 ? "You own the card" : "You don't own the card"
     }
-    return `${isSecondHint ? "" : "you own "}${matching > 0 ? matching : "none"} of the ${total}${isSecondHint ? " other" : ""} cards required`
+    return `${isSecondHint ? "" : "You own "}${matching > 0 ? matching : "none"} of the ${total}${isSecondHint ? " other" : ""} cards required`
 }
 
 function ProbabilityCase({ handShape, probability }: ProbabilityCaseProps) {
@@ -33,24 +33,29 @@ function ProbabilityCase({ handShape, probability }: ProbabilityCaseProps) {
             "py-4 md:py-5 lg:py-8 xl:py-11",
             "px-4 md:px-5 lg:px-8 xl:px-11"
         )}>
-            <div className="p-2">
-                <p>{hint}</p>
-            </div>
+
             <div className="flex justify-between">
                 <div className="flex grow gap-4 md:gap-8 flex-wrap items-center">
                     <PlayingCardGroup {...handShape.cardGroup1Data} />
                     {handShape.cardGroup2Data && <PlayingCardGroup {...handShape.cardGroup2Data} />}
                 </div>
                 <div className="flex flex-col justify-center">
-                    <div className="flex ps-10 flex-col items-end md:flex-row md:items-baseline md:justify-end gap-1">
-                        <p className="flex flex-col justify-center text-4xl font-bold">
+                    <div className={classNames(
+                        "flex flex-col md:flex-row",
+                        "items-end md:items-baseline md:justify-end",
+                        "ps-10 sm:gap-1 lg:gap-2"
+                    )}>
+                        <p className="flex flex-col justify-center text-3xl sm:text-4xl lg:text-5xl font-bold">
                             {probability.toFixed(3)}%
                         </p>
-                        <p>
+                        <p className="lg:text-lg">
                             likely
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className="mt-4 sm:mt-8">
+                <h3 className="text-sm lg:text-base">{hint}</h3>
             </div>
         </div>
 
