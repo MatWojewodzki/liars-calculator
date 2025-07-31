@@ -1,5 +1,6 @@
 import {createFileRoute} from "@tanstack/react-router"
 import StandardInternalLink from "../components/common/StandardInternalLink.tsx"
+import StandardExternalLink from "../components/common/StandardExternalLink.tsx";
 
 export const Route = createFileRoute('/game-rules')({
     component: GameRules,
@@ -52,50 +53,127 @@ function GameRules() {
                     parameter is higher.
                 </li>
             </ul>
+            <h2 className="text-xl mt-12 font-medium">Poker hand ranking</h2>
             <p className="mt-4">
-                The order of poker hands, from highest to lowest, along with their parameters:
+                Before the game begins, the ranking of poker hands must be specified and all players should familiarise
+                themselves with it. You may find different hierarchies across the internet, but keep in mind that they
+                often refer to other variants of the game.
+            </p>
+            <p className="mt-4">
+                The ranking of poker hands we suggest, from highest to lowest, along with their parameters:
             </p>
             <ol className="list-decimal list-inside mt-4 ps-4">
                 <li>
-                    Royal flush (<i className="italic">rank</i>) - ranks range from 10 to A
+                    high straight flush (also known as a royal flush) (<i className="italic">rank</i>) - ranks range from 10 to A
                 </li>
                 <li>
-                    Straight flush (<i className="italic">rank</i>) - ranks range from 9 to K
+                    low straight flush (also known as a straight flush) (<i className="italic">rank</i>) - ranks range from 9 to K
                 </li>
                 <li>
-                    Four of a kind (<i className="italic">rank</i>)
+                    four of a kind (<i className="italic">rank</i>)
                 </li>
                 <li>
-                    Flush (<i className="italic">suit</i>)
+                    flush (<i className="italic">suit</i>)
                 </li>
                 <li>
-                    Full house (<i className="italic">rank</i>, <i className="italic">rank</i>) - the rank
+                    full house (<i className="italic">rank</i>, <i className="italic">rank</i>) - the rank
                     specifying the three cards is the more important parameter
                 </li>
                 <li>
-                    Three of a kind (<i className="italic">rank</i>)
+                    three of a kind (<i className="italic">rank</i>)
                 </li>
                 <li>
-                    Two pair (<i className="italic">rank</i>, <i className="italic">rank</i>) - the higher
+                    two pair (<i className="italic">rank</i>, <i className="italic">rank</i>) - the higher
                     rank is the more important parameter
                 </li>
                 <li>
-                    Large straight - ranks range from 10 to A
+                    high straight - ranks range from 10 to A
                 </li>
                 <li>
-                    Small straight - ranks range from 9 to K
+                    low straight - ranks range from 9 to K
                 </li>
                 <li>
-                    Pair (<i className="italic">rank</i>)
+                    pair (<i className="italic">rank</i>)
                 </li>
                 <li>
-                    High card (<i className="italic">rank</i>)
+                    high card (<i className="italic">rank</i>)
                 </li>
             </ol>
             <p className="mt-4">
                 You will find the reasoning behind this order in the{" "}
-                <StandardInternalLink to="/hand-ranking">poker hand order</StandardInternalLink>{" "}
-                section.
+                <StandardInternalLink to="/hand-ranking">poker hand order section</StandardInternalLink>
+                .
+            </p>
+            <p className="mt-4">
+                Here's a different hierarchy, taken from the{" "}
+                <StandardExternalLink
+                    href="https://pl.wikipedia.org/wiki/Blef_(gra)#Starsze%C5%84stwo_i_wymagane_parametry_typ%C3%B3w_zg%C5%82osze%C5%84"
+                >
+                    Polish Wikipedia page for the game
+                </StandardExternalLink>
+                :
+            </p>
+            <ol className="list-decimal list-inside mt-4 ps-4">
+                <li>
+                    high straight flush
+                </li>
+                <li>
+                    low straight flush
+                </li>
+                <li>
+                    four of a kind
+                </li>
+                <li>
+                    flush
+                </li>
+                <li>
+                    full house
+                </li>
+                <li>
+                    three of a kind
+                </li>
+                <li>
+                    high straight
+                </li>
+                <li>
+                    low straight
+                </li>
+                <li>
+                    two pair
+                </li>
+                <li>
+                    pair
+                </li>
+                <li>
+                    high card
+                </li>
+            </ol>
+            <p className="mt-4">
+                Here the positions of two pair and straight are reversed.
+            </p>
+            <h2 className="text-xl mt-12 font-medium">Suit ranking</h2>
+            <p className="mt-4">
+                Along with the poker hand ranking, you also need to specify the suit hierarchy.
+                You may choose whichever order you prefer — below, we present the reversed lexicographical order
+                commonly used in other games:
+            </p>
+            <ol className="list-decimal list-inside mt-4 ps-4">
+                <li>
+                    ♠ Spades
+                </li>
+                <li>
+                    ♥ Hearts
+                </li>
+                <li>
+                    ♦ Diamonds
+                </li>
+                <li>
+                    ♣ Clubs
+                </li>
+            </ol>
+            <p className="mt-4">
+                The ranking of suits is needed to determine the hierarchy of flushes, straight flushes
+                and royal flushes.
             </p>
             <h2 className="text-xl mt-12 font-medium">Alternative rules</h2>
             <ul className="list-disc list-inside mt-4 ps-4">

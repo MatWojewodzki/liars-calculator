@@ -17,13 +17,13 @@ function Hierarchy() {
                 Poker hands from the highest to the lowest:
             </p>
             <ol className="list-decimal list-inside mt-4 ps-4">
-                <li>straight flush (small and large)</li>
+                <li>straight flush (low and high)</li>
                 <li>four of a kind</li>
                 <li>flush</li>
                 <li>full house</li>
                 <li>three of a kind</li>
                 <li>two pair</li>
-                <li>straight (small and large)</li>
+                <li>straight (low and high)</li>
                 <li>pair</li>
                 <li>high card</li>
             </ol>
