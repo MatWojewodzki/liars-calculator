@@ -1,0 +1,14 @@
+{
+  "header": {
+    "navbar": {
+      "home": "Home",
+      "pokerHandRanking": "Ranking układów pokerowych",
+      "gameRules": "Zasady gry",
+      "about": "O stronie"
+    }
+  },
+  "footer": {
+    "contentNotice": "Treści zawarte na tej stronie są objęte licencją <2>CC BY-NC 4.0</2>.",
+    "sourceCodeNotice": "Kod źródłowy strony jest dostępny na platformie <2>GitHub</2>."
+  }
+}

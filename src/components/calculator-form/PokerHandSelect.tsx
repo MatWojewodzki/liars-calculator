@@ -8,7 +8,7 @@ type pokerHandSelectProps = {
 function PokerHandSelect({ value, setValue }: pokerHandSelectProps) {
     return (
         <select
-            className="w-full mx-4 pe-4"
+            className="w-full mx-4 pe-4 rounded-md"
             id="pokerHand"
             value={value}
             onChange={(e) => setValue(e.target.value as PokerHand)}

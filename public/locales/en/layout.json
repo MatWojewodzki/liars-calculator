@@ -1,0 +1,14 @@
+{
+  "header": {
+    "navbar": {
+      "home": "Home",
+      "pokerHandRanking": "Poker hand ranking",
+      "gameRules": "Game rules",
+      "about": "About"
+    }
+  },
+  "footer": {
+    "contentNotice": "The content on this website is licensed under the <2>CC BY-NC 4.0</2>.",
+    "sourceCodeNotice": "The source code is available on <2>GitHub</2>."
+  }
+}
