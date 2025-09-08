@@ -1,5 +1,7 @@
 import PlayingCardGroup, { CardGroupData } from "./PlayingCardGroup.tsx"
-import classNames from "classnames";
+import classNames from "classnames"
+import { useTranslation } from "react-i18next"
+import {TFunction} from "i18next";
 
 type ProbabilityCaseProps = {
     handShape: {
@@ -9,22 +11,28 @@ type ProbabilityCaseProps = {
     probability: number
 }
 
-function createHint(cardGroupData: CardGroupData, isSecondHint: boolean) {
-    const {matchingCardCount: matching, totalCardCount: total} = cardGroupData
-    if (total === 1) {
-        return matching === 1 ? "You own the card" : "You don't own the card"
+function createHint(t: TFunction<"calculatorResults", undefined>, cardGroupData: CardGroupData, isSecondHint: boolean) {
+
+    // const {matchingCardCount: matching, totalCardCount: total} = cardGroupData
+    if (cardGroupData.totalCardCount === 1) {
+        return t("dontOwnSingle")
     }
-    return `${isSecondHint ? "" : "You own "}${matching > 0 ? matching : "none"} of the ${total}${isSecondHint ? " other" : ""} cards required`
+    // return `${isSecondHint ? "" : "You own "}${matching > 0 ? matching : "none"} of the ${total}${isSecondHint ? " other" : ""} cards required`
+    return t(
+        isSecondHint ? "hint2" : "hint1",
+        { matchingCardCount: cardGroupData.matchingCardCount, totalCardCount: cardGroupData.totalCardCount}
+    )
 }
 
 function ProbabilityCase({ handShape, probability }: ProbabilityCaseProps) {
+    const { t } = useTranslation("calculatorResults")
 
     const { cardGroup1Data, cardGroup2Data } = handShape
 
-    const hint1 = createHint(cardGroup1Data, false)
-    const hint2 = cardGroup2Data ? createHint(cardGroup2Data, true) : null
+    const hint1 = createHint(t, cardGroup1Data, false)
+    const hint2 = cardGroup2Data ? createHint(t, cardGroup2Data, true) : null
 
-    const hint = hint2 ? `${hint1} and ${hint2}` : hint1
+    const hint = hint2 ? `${hint1}${hint2}` : `${hint1}.`
 
     return (
         <div className={classNames(
@@ -49,7 +57,7 @@ function ProbabilityCase({ handShape, probability }: ProbabilityCaseProps) {
                             {probability.toFixed(3)}%
                         </p>
                         <p className="lg:text-lg">
-                            likely
+                            {t("chance")}
                         </p>
                     </div>
                 </div>

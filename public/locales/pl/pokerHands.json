@@ -1,0 +1,11 @@
+{
+  "highCard": "wysoka karta",
+  "pair": "para",
+  "twoPair": "dwie pary",
+  "straight": "strit",
+  "threeOfAKind": "trójka",
+  "fullHouse": "full",
+  "flush": "kolor",
+  "fourOfAKind": "kareta",
+  "straightFlush": "poker"
+}

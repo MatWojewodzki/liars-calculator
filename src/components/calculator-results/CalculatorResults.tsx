@@ -4,7 +4,7 @@ import {getOneDimHandVariants, getTwoDimHandVariants} from "../../utils/getHandV
 import {OneDimensionalPokerHand, TwoDimensionalPokerHand} from "../../schemas/pokerHand.ts"
 import ProbabilityCase from "./ProbabilityCase.tsx";
 import { getOneDimHandProbability, getTwoDimHandProbability } from "../../utils/getHandProbability.ts"
-import getHandName from "../../utils/getHandName.ts"
+import { useTranslation } from "react-i18next"
 
 const oneDimTotalCardCounts = {
     highCard: 1,
@@ -22,14 +22,19 @@ const twoDimTotalCardCounts = {
 }
 
 function CalculatorResults({ pokerHand, handSize, cardCount }: CalculatorResultSearch) {
+    const { t } = useTranslation("calculatorResults")
 
     const handDimension = getHandDimension(pokerHand)
 
     return (
         <>
             <section className="mb-12">
-                <h2 className="text-center font-semibold text-2xl">The odds of a specific {getHandName(pokerHand)}</h2>
-                <p className="text-center">depending on the cards in your hand</p>
+                <h2 className="text-center font-semibold text-2xl">
+                    {t("title", { specificPokerHand: t(`specificPokerHand.${pokerHand}`) })}
+                </h2>
+                <p className="text-center">
+                    {t("subtitle")}
+                </p>
             </section>
             <section className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12">
                 {handDimension === 1 ? (

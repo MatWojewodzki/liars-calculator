@@ -1,0 +1,21 @@
+{
+  "specificPokerHand": {
+    "highCard": "specific high card",
+    "pair": "specific pair",
+    "straight": "specific straight",
+    "twoPair": "specific two pair",
+    "threeOfAKind": "specific three of a kind",
+    "fullHouse": "specific full house",
+    "flush": "specific flush",
+    "fourOfAKind": "specific four of a kind",
+    "straightFlush": "specific straight flush"
+  },
+  "title": "The odds of a {{specificPokerHand}}",
+  "subtitle": "depending on the cards in your hand",
+  "chance": "chance",
+  "matchingCardCount_zero": "none",
+  "matchingCardCount": "{{count}}",
+  "dontOwnSingle": "You don't own the card",
+  "hint1": "You own $t(matchingCardCount, {\"count\": {{matchingCardCount}} }) of the {{totalCardCount}} cards required",
+  "hint2": " and $t(matchingCardCount, {\"count\": {{matchingCardCount}} }) of the {{totalCardCount}} other cards required."
+}

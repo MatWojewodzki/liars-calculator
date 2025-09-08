@@ -8,7 +8,7 @@ type pokerHandSelectProps = {
 }
 
 function PokerHandSelect({ value, setValue }: pokerHandSelectProps) {
-    const { t } = useTranslation("calculatorForm", { keyPrefix: "pokerHandSelect" })
+    const { t } = useTranslation("calculatorForm")
     return (
         <select
             className="w-full mx-4 pe-4 rounded-md"
@@ -16,7 +16,7 @@ function PokerHandSelect({ value, setValue }: pokerHandSelectProps) {
             value={value}
             onChange={(e) => setValue(e.target.value as PokerHand)}
         >
-            <option value="" hidden>{t("defaultValue")}</option>
+            <option value="" hidden>{t("pokerHandSelectDefault")}</option>
             <PokerHandSelectOption value="highCard"/>
             <PokerHandSelectOption value="pair"/>
             <PokerHandSelectOption value="straight"/>
@@ -31,7 +31,7 @@ function PokerHandSelect({ value, setValue }: pokerHandSelectProps) {
 }
 
 function PokerHandSelectOption({ value }: { value: PokerHand }) {
-    const { t } = useTranslation("calculatorForm", { keyPrefix: "pokerHandSelect" })
+    const { t } = useTranslation("pokerHands")
     return (
         <option value={value}>
             {t(value)}
