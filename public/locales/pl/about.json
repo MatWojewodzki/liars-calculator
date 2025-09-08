@@ -1,0 +1,5 @@
+{
+  "title": "O stronie",
+  "content": "Liar's Calculator to strona internetowa, która pozwala sprawdzić dokładne szanse na to, że obstawienie gracza w grze karcianej blef okaże się trafne. Znajdziemy tu również opis zasad gry oraz ranking układów pokerowych ułożony zgodnie z prawdopodobieństwem. Do wygenerowania wszystkich danych dotyczących prawdopodobieństwa przedstawionych na tej stronie użyto skryptu napisanego w języku Python, który jest dostępny na platformie <2>GitHub</2>.",
+  "notice": "Dane dotyczące prawdopodobieństwa zamieszczone na tej stronie internetowej nie zostały zweryfikowane pod kątem poprawności ani dokładności. Strona ma charakter wyłącznie edukacyjny i informacyjny. Prezentuje matematyczną analizę gry i nie ma na celu promowania hazardu."
+}

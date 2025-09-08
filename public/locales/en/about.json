@@ -1,0 +1,5 @@
+{
+  "title": "About",
+  "content": "Liar's Calculator is a website allowing you to check the exact probability of a player's guess being correct in a liar's poker card game. It also features a description of the game rules and a poker hand ranking advised according to probability. All the probability data presented on this website has been calculated using a Python script available on <2>GitHub</2>.",
+  "notice": "The probability data provided on this website has not been verified for correctness or accuracy. The website is intended for educational and informational purposes only. It presents a mathematical analysis of the game and is not intended to promote gambling."
+}
