@@ -1,0 +1,17 @@
+{
+  "cardCountLabel": "Liczba kart na stole:",
+  "handSizeLabel": "Liczba kart na twojej ręce:",
+  "pokerHandSelect": {
+    "defaultValue": "Wybierz układ",
+    "highCard": "wysoka karta",
+    "pair": "para",
+    "twoPair": "dwie pary",
+    "straight": "strit",
+    "threeOfAKind": "trójka",
+    "fullHouse": "full",
+    "flush": "kolor",
+    "fourOfAKind": "kareta",
+    "straightFlush": "poker"
+  },
+  "calculateButton": "Oblicz"
+}

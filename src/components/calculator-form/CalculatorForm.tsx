@@ -5,8 +5,10 @@ import calculatorResultSearch, { CalculatorResultSearch } from "../../schemas/ca
 import {useNavigate} from "@tanstack/react-router"
 import classNames from "classnames"
 import {PokerHand} from "../../schemas/pokerHand.ts";
+import { useTranslation } from "react-i18next"
 
 function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
+    const { t } = useTranslation("calculatorForm")
 
     const navigate = useNavigate()
 
@@ -58,7 +60,7 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             className="flex flex-col xl:flex-row gap-3"
         >
             <div className="flex justify-between p-4 gap-x-3 items-baseline bg-white rounded-lg border-6 border-neutral-200">
-                <label htmlFor="cardCount">Number of cards on the table:</label>
+                <label htmlFor="cardCount">{t("cardCountLabel")}</label>
                 <CardCountInput
                     id="cardCount"
                     min={1} max={23}
@@ -70,7 +72,7 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
             </div>
 
             <div className="flex justify-between p-4 gap-x-3 items-baseline bg-white rounded-lg border-6 border-neutral-200">
-                <label htmlFor="handSize">Number of cards on your hand:</label>
+                <label htmlFor="handSize">{t("handSizeLabel")}</label>
                 <CardCountInput
                     id="handSize"
                     min={1}
@@ -101,7 +103,7 @@ function CalculatorForm({ search }: { search?: CalculatorResultSearch }) {
                     "font-semibold"
                 )}
             >
-                Calculate
+                {t("calculateButton")}
             </button>
         </form>
     )

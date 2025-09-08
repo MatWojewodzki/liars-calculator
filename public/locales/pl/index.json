@@ -1,0 +1,18 @@
+{
+  "header": {
+    "title": "Oblicz swoje szanse w grze karcianej blef",
+    "subtitle": "Dokładne prawdopodobieństwo każdego układu przy założeniu, że używana jest talia składająca się z 24 kart."
+  },
+  "infoSection1": {
+    "title": "Zaspokój swoją ciekawość",
+    "content": "Czy kiedykolwiek udało Ci się poprawnie odgadnąć układ kart i w twojej głowie pojawiła się myśl: „Jak wielkiego miałem farta?” Trafiłeś we właściwe miejsce! Sprawdź natychmiast prawdopodobieństwo w naszym kalkulatorze."
+  },
+  "infoSection2": {
+    "title": "Przeanalizuj układy",
+    "content": "Ty też od zawsze zastanawiałeś się jaka właściwie powinna być kolejność układów w blefie? Jesteś o krok od rozwiania swoich wątpliwości. Sprawdź naszą <2>analizę</2>."
+  },
+  "infoSection3": {
+    "title": "Poznaj zasady",
+    "content": "Nie jesteś jeszcze pewny jak grać w blefa? Nie przejmuj się. Zapoznaj się z przygotowanymi przez nas <2>zasadami gry</2>."
+  }
+}

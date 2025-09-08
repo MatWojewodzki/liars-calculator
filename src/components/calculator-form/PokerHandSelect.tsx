@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next"
+
 import { PokerHand } from "../../schemas/pokerHand.ts"
 
 type pokerHandSelectProps = {
@@ -6,6 +8,7 @@ type pokerHandSelectProps = {
 }
 
 function PokerHandSelect({ value, setValue }: pokerHandSelectProps) {
+    const { t } = useTranslation("calculatorForm", { keyPrefix: "pokerHandSelect" })
     return (
         <select
             className="w-full mx-4 pe-4 rounded-md"
@@ -13,17 +16,26 @@ function PokerHandSelect({ value, setValue }: pokerHandSelectProps) {
             value={value}
             onChange={(e) => setValue(e.target.value as PokerHand)}
         >
-            <option value="" hidden>Select a poker hand</option>
-            <option value="highCard">high card</option>
-            <option value="pair">pair</option>
-            <option value="twoPair">two pair</option>
-            <option value="straight">straight</option>
-            <option value="threeOfAKind">three of a kind</option>
-            <option value="fullHouse">full house</option>
-            <option value="flush">flush</option>
-            <option value="fourOfAKind">four of a kind</option>
-            <option value="straightFlush">straight flush</option>
+            <option value="" hidden>{t("defaultValue")}</option>
+            <PokerHandSelectOption value="highCard"/>
+            <PokerHandSelectOption value="pair"/>
+            <PokerHandSelectOption value="straight"/>
+            <PokerHandSelectOption value="twoPair"/>
+            <PokerHandSelectOption value="threeOfAKind"/>
+            <PokerHandSelectOption value="fullHouse"/>
+            <PokerHandSelectOption value="flush"/>
+            <PokerHandSelectOption value="fourOfAKind"/>
+            <PokerHandSelectOption value="straightFlush"/>
         </select>
+    )
+}
+
+function PokerHandSelectOption({ value }: { value: PokerHand }) {
+    const { t } = useTranslation("calculatorForm", { keyPrefix: "pokerHandSelect" })
+    return (
+        <option value={value}>
+            {t(value)}
+        </option>
     )
 }
 

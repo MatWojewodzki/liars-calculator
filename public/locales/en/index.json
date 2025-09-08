@@ -1,0 +1,18 @@
+{
+  "header": {
+    "title": "Calculate the odds in liar's poker card game",
+    "subtitle": "The exact probability of every poker hand assuming a 24-card deck is used."
+  },
+  "infoSection1": {
+    "title": "Satisfy your curiosity",
+    "content": "Have you ever guessed a poker hand correctly and thought \"How lucky was I?\" Look no further! Check the odds in our calculator instantly."
+  },
+  "infoSection2": {
+    "title": "Analyze the poker hands",
+    "content": "Have you always wondered what the poker hand order should be? Check out our <2>analysis</2>."
+  },
+  "infoSection3": {
+    "title": "Learn the rules",
+    "content": "Not sure how to play liar's poker yet? Go check out the <2>game rules</2>."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cardCountLabel": "Number of cards on the table:",
+  "handSizeLabel": "Number of cards on your hand:",
+  "pokerHandSelect": {
+    "defaultValue": "Select a poker hand",
+    "highCard": "high card",
+    "pair": "pair",
+    "twoPair": "two pair",
+    "straight": "straight",
+    "threeOfAKind": "three of a kind",
+    "fullHouse": "full house",
+    "flush": "flush",
+    "fourOfAKind": "four of a kind",
+    "straightFlush": "straight flush"
+  },
+  "calculateButton": "Calculate"
+}
