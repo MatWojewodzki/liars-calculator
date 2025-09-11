@@ -15,7 +15,7 @@ function Footer() {
     return (
         <footer
             className={classNames(
-                "py-16 px-32",
+                "py-16 px-4 lg:px-16 xl:px-32",
                 "bg-linear-to-t from-neutral-50 to-neutral-100",
                 "flex flex-col justify-center gap-4"
             )}
