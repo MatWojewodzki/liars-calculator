@@ -1,0 +1,19 @@
+{
+  "title": "Sugerowane starszeństwo układów pokerowych według prawdopodobieństwa",
+  "ranking": {
+    "intro": "Układy pokerowe od najwyższego do najniższego:",
+    "straightVariants": "{{handName}} (mały i duży)",
+    "additionalNotes": "Oczywiście to tylko matematyka i nic nie stoi na przeszkodzie, aby eksperymentować i modyfikować hierarchię w oparciu o to, co wydaje się działać najlepiej i jest uznawane za najbardziej sprawiedliwe według graczy biorących udział w rozgrywce. Należy pamiętać, że ranking ten został stworzony przy założeniu, że używamy talii składającej się z 24 kart. Więcej informacji na temat odpowiadającej wersji gry znaleźć można w <0>zasadach blefa</0>."
+  },
+  "probabilityDetails": {
+    "heading": "Szczegóły prawdopodobieństwa",
+    "chartIntro": "Poniższy wykres przedstawia prawdopodobieństwo wystąpienia na stole poszczególnych układów pokerowych w zależności od liczby rozdanych kart. Trzeba mieć na uwadze, że rozpatrujemy tu układy pokerowe określone przez parametry — na przykład prawdopodobieństwo pary odnosi się do prawdopodobieństwa „pary dam” albo „pary królów”.",
+    "pokerHandProbabilityChartTitle": "Prawdopodobieństwo wystąpienia układów pokerowych",
+    "rankingExplanation": "Jak widać, sugerowany ranking układów powinien być całkiem jasny.",
+    "pairAndStraightBehaviour": "Zaskoczyć może fakt, że strit staje się bardziej prawdopodobny od pary, gdy na stole znajduje się dziesięć lub więcej kart. Nie ma jednak osoby, która postawiłaby parę wyżejw hierarchii, biorąc pod uwagę, że jest ona podstawowym układem w początkowej fazie rozgrywki — zanim nawet strity staną się jakkolwiek możliwe.",
+    "straightMoreLikelyReason": "Można zapytać, dlaczego w ogóle jest możliwe, aby strit miał wyższe prawdopodobieństwo wystąpienia niż para. Odpowiedź jest taka, że powyższy wykres porównuje układy pokerowe na podstawie surowego prawdopodobieństwa ich pojawienia się na stole, nie biorąc pod uwagę faktu, że gracz ma część rozdanych kart w swojej ręce i najczęściej z nich korzysta.",
+    "pairAndStraightComparisonScenario": "Aby rozwiać wszelkie wątpliwości, możemy porównać prawdopodobieństwo uzyskania pary i strita, gdy gracz ma na ręku jedną kartę i wykorzystuje ją do obu układów (np. gracz ma dziesiątkę pik i mówi „para dziesiątek” albo „mały strit”).",
+    "pairAndStraightComparisonChartTitle": "Prawdopodobieństwo wystąpienia pary i strita — jedna z wymaganych kart jest zagwarantowana",
+    "comparisonConclusion": "Widzimy, że w tym przypadku prawdopodobieństwo wystąpienia pary jest znacznie wyższe niż strita, zgodnie z przewidywaniami."
+  }
+}

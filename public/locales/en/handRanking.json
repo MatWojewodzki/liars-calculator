@@ -1,0 +1,19 @@
+{
+  "title": "Suggested ranking of poker hands according to probability",
+  "ranking": {
+    "intro": "Poker hands from the highest to the lowest:",
+    "straightVariants": "{{handName}} (low and high)",
+    "additionalNotes": "Of course, this is just the maths and you should feel free to experiment and adjust it based on what do you think works best and seems fair to all players. Please note that this ranking was created on the assumption that we are using a 24-card deck. For more information about the relevant game variant check the <0>game rules</0>."
+  },
+  "probabilityDetails": {
+    "heading": "Probability details",
+    "chartIntro": "The following chart shows the probability of poker hands existing on the table depending on the number of cards drawn from the deck. Keep in mind that these are the odds for poker hands specified by parameters — for example, the probability of a pair refers to the probability of a 'pair of queens' or 'a pair of kings'.",
+    "pokerHandProbabilityChartTitle": "Probability of poker hands occurring",
+    "rankingExplanation": "As you can see, the suggested ranking of the hands is pretty clear.",
+    "pairAndStraightBehaviour": "It may come as a surprise that a straight becomes more likely than a pair when there are ten or more cards on the table, but no one would rank a pair higher anyway, since it's the essential poker hand in early game — before straights are even possible.",
+    "straightMoreLikelyReason": "You may ask why it’s even possible for a straight to be more likely than a pair. The answer is that the graph above compares poker hands based on the raw probability of a hand appearing on the table, without taking into account the fact that the player has some of the dealt cards in their own hand and most often uses them.",
+    "pairAndStraightComparisonScenario": "To dispel any doubts, we can compare the probability of having a pair and a straight when the player has one card in his hand and uses it for both poker combinations (e.g. the player has a ten of spades and says 'a pair of 10s' or 'a low straight').",
+    "pairAndStraightComparisonChartTitle": "Probability of a pair and a straight occurring — one card is guaranteed",
+    "comparisonConclusion": "We can see that, in this case, the probability of a pair is much higher than that of a straight, just as expected."
+  }
+}

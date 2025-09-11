@@ -1,51 +1,34 @@
 import ProbabilityChart from "./ProbabilityChart.tsx"
 import {getOneDimHandAllProbabilities, getTwoDimHandAllProbabilities} from "../../utils/getHandProbability.ts";
-import getChartLabels from "../../utils/getChartLabels.ts";
+import getChartLabels from "../../utils/getChartLabels.ts"
+import { useTranslation } from "react-i18next"
+import {OneDimensionalPokerHand, TwoDimensionalPokerHand} from "../../schemas/pokerHand.ts";
 
 function HandComparisonChart() {
+    const { t } = useTranslation(["pokerHands", "handRanking"])
+
+    const pokerHands = [
+        { key: "highCard" },
+        { key: "pair" },
+        { key: "straight" },
+        { key: "twoPair", isTwoDim: true },
+        { key: "threeOfAKind" },
+        { key: "fullHouse", isTwoDim: true },
+        { key: "flush" },
+        { key: "fourOfAKind" },
+        { key: "straightFlush" },
+    ]
     return (
         <ProbabilityChart
-            title="Poker hand probability"
+            title={t("probabilityDetails.pokerHandProbabilityChartTitle", { ns: "handRanking" })}
             data={{
                 labels: getChartLabels(0),
-                datasets: [
-                    {
-                        label: "high card",
-                        data: getOneDimHandAllProbabilities("highCard", 0, 0)
-                    },
-                    {
-                        label: "pair",
-                        data: getOneDimHandAllProbabilities("pair", 0, 0)
-                    },
-                    {
-                        label: "straight",
-                        data: getOneDimHandAllProbabilities("straight", 0, 0)
-                    },
-                    {
-                        label: "two pair",
-                        data: getTwoDimHandAllProbabilities("twoPair", 0, 0, 0)
-                    },
-                    {
-                        label: "three of a kind",
-                        data: getOneDimHandAllProbabilities("threeOfAKind", 0, 0)
-                    },
-                    {
-                        label: "full house",
-                        data: getTwoDimHandAllProbabilities("fullHouse", 0, 0, 0)
-                    },
-                    {
-                        label: "flush",
-                        data: getOneDimHandAllProbabilities("flush", 0, 0)
-                    },
-                    {
-                        label: "four of a kind",
-                        data: getOneDimHandAllProbabilities("fourOfAKind", 0, 0)
-                    },
-                    {
-                        label: "straight flush",
-                        data: getOneDimHandAllProbabilities("straightFlush", 0, 0)
-                    }
-                ]
+                datasets: pokerHands.map(({ key, isTwoDim }) => ({
+                    label: t(key),
+                    data: isTwoDim
+                        ? getTwoDimHandAllProbabilities(key as TwoDimensionalPokerHand, 0, 0, 0)
+                        : getOneDimHandAllProbabilities(key as OneDimensionalPokerHand, 0, 0)
+                }))
             }}
         />
     )
