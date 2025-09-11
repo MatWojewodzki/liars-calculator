@@ -5,14 +5,14 @@
   },
   "infoSection1": {
     "title": "Satisfy your curiosity",
-    "content": "Have you ever guessed a poker hand correctly and thought \"How lucky was I?\" Look no further! Check the odds in our calculator instantly."
+    "content": "Have you ever guessed a poker hand correctly and thought <0>\"How lucky was I?\"</0> Look no further! Check the odds in our calculator instantly."
   },
   "infoSection2": {
     "title": "Analyze the poker hands",
-    "content": "Have you always wondered what the poker hand order should be? Check out our <2>analysis</2>."
+    "content": "Have you always wondered what the poker hand order should be? Check out our <0>analysis</0>."
   },
   "infoSection3": {
     "title": "Learn the rules",
-    "content": "Not sure how to play liar's poker yet? Go check out the <2>game rules</2>."
+    "content": "Not sure how to play liar's poker yet? Go check out the <0>game rules</0>."
   }
 }

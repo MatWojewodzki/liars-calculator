@@ -1,0 +1,61 @@
+{
+  "title": "Zasady blefa",
+  "description": "Blef to gra karciana nawiązująca do pokera. Jednym z jej największych atutów jest bez wątpienia duża swoboda w zakresie możliwej liczby graczy. W internecie znaleźć można dziesiątki różnych wariantów gry, ale zawartość niniejszej strony odnosi się do wersji opisanej poniżej.",
+  "rules": {
+    "heading": "Zasady",
+    "deckAndObjective": "Gra rozgrywana jest przy użyciu talii składającej się z 24 kart, od dziewiątek do asów. Jej celem jest przewidywanie układów pokerowych, które występują pośród wszystkich kart rozdanych graczom, na podstawie kart znajdujących się na ręce oraz deklaracji poprzednich graczy. Na początku rozgrywki każdy z graczy otrzymuje jedną kartę. Wybrany gracz rozpoczyna licytację, deklarując dowolny układ pokerowy, następnie kolejka przechodzi na następną osobę zgodnie z ruchem wskazówek zegara.",
+    "playerActions": "Każdy kolejny gracz jest zobowiązany wykonać jedną z dwóch dostępnych akcji: zadeklarować wyższy układ pokerowy albo sprawdzić deklarację swojego poprzednika, kończąc tym samym rundę. Kiedy któryś z graczy zdecyduje się sprawdzić, wszystkie osoby ujawniają swoje karty. Jeżeli ostatnia deklaracja okazała się niepoprawna, obstawiający gracz przegrywa rundę, w przeciwnym razie przegranym jest gracz, który dokonał sprawdzenia. Wszystkie karty zostają potasowane i ponownie rozdane, ale tym razem przegrany otrzymuje jedną kartę więcej niż do tej pory. W nowej rundzie staje się on pierwszym obstawiającym.",
+    "endCondition": "Gra toczy się do momentu aż któryś z graczy otrzyma swoją piątą kartę. W tym momencie gracz z najmniejszą liczbą kart na ręce wygrywa."
+  },
+  "pokerCombinations": {
+    "heading": "Układy pokerowe",
+    "combinationDefinition": "Układy pokerowe w blefie różnią się od tych w pokerze, ponieważ wraz z układem kart gracz musi określić jego parametry. Układ pokerowy jest uznawany za wyższy jeżeli:",
+    "comparisonCriteria": {
+      "higherHand": "stanowi wyższy układ w rozumieniu pokera (np. para przebija wysoką kartę) albo",
+      "moreImportantParameterHigher": "jest to ten sam układ, ale bardziej istotny parametr jest wyższy wartością albo",
+      "lessImportantParameterHigher": "jest to ten sam układ, bardziej istotny parametr jest równy, a mniej istotny parametr jest wyższy wartością."
+    }
+  },
+  "pokerHandRanking": {
+    "heading": "Starszeństwo układów",
+    "intro": "Przed rozpoczęciem rozgrywki, musi zostać określona hierarchia układów, a wszyscy gracze powinni mieć możliwość zapoznania się z nią. W internecie znaleźć można różne rankingi, ale trzeba mieć na uwadze, że często dotyczą one innych wariantów gry.",
+    "suggestedRanking": {
+      "intro": "Ranking układów, który sugerujemy, od najwyższego do najniższego, wraz z wymaganymi parametrami:",
+      "hands": {
+        "highStraightFlush": "<0>duży poker</0> (znany również jako <0>poker królewski</0>) (<1>kolor</1>) — pięć kart w określonym kolorze w kolejności od 10 do A",
+        "lowStraightFlush": "<0>mały poker</0> (<1>kolor</1>) — pięć kart w określonym kolorze w kolejności od 9 do K",
+        "fourOfAKind": "<0>kareta</0> (<1>wartość</1>) — cztery karty wskazanej wartości",
+        "flush": "<0>kolor</0> (<1>kolor</1>) — pięć kart tego samego koloru",
+        "fullHouse": "<0>full</0> (<1>wartość</1>, <1>wartość</1>) — trzy karty pierwszej wartości i dwie karty drugiej wartości, wartość trzech kart stanowi bardziej istotny parametr",
+        "threeOfAKind": "<0>trójka</0> (<1>wartość</1>) — trzy karty wskazanej wartości",
+        "twoPair": "<0>dwie pary</0> (<1>wartość</1>, <1>wartość</1>) — dwie karty pierwszej wartości i dwie karty drugiej wartości, wyższa z wartości stanowi bardziej istotny parametr",
+        "highStraight": "<0>duży strit</0> — pięć kart dowolnego koloru w kolejności od 10 do A",
+        "lowStraight": "<0>mały strit</0> — pięć kart dowolnego koloru w kolejności od 9 do K",
+        "pair": "<0>para</0> (<1>wartość</1>) — dwie karty wskazanej wartości",
+        "highCard": "<0>wysoka karta</0> (<1>wartość</1>) - pojedyncza karta wskazanej wartości"
+      },
+      "reasoning": "Uzasadnienie tej kolejności znaleźć można w sekcji <0>ranking układów pokerowych</0>."
+    },
+    "polishWikipediaRanking": "Odmienny ranking znaleźć można na <0>polskiej stronie Wikipedii poświęconej blefowi</0>, jednak przedstawiona tam kolejność starszeństwa nie została w żaden sposób uzasadniona. Od przedstawionej powyżej różni się ona wzajemnym położeniem strita i dwóch par."
+  },
+  "suitRanking": {
+    "heading": "Starszeństwo kolorów ",
+    "intro": "Wraz ze starszeństwem układów, konieczne jest również określenie hierarchii kolorów. Jest ona niezbędna do rozstrzygania starszeństwa wewnątrz układów — kolorów, małych oraz dużych pokerów. Możesz wybrać dowolną kolejność — poniżej przedstawiamy odwróconą angielską kolejność alfabetyczną, powszechnie stosowaną w innych grach:",
+    "suits": {
+      "spades": "♠ Pik",
+      "hearts": "♥ Kier",
+      "diamonds": "♦ Karo",
+      "clubs": "♣ Trefl"
+    }
+  },
+  "alternativeRules": {
+    "heading": "Zasady alternatywne",
+    "rules": {
+      "maxNumOfCardsAdjusted": "Zaleca się dostosowanie maksymalnej liczby kart na ręce gracza do całkowitej ilości osób biorących udział w grze. Im mniej osób, tym większy może być limit.",
+      "kickingPlayers": "Zamiast kończyć rozgrywkę w momencie, gdy któryś z graczy osiągnie określoną liczbę kart, przegrana osoba może być usuwana z gry, a gra kontynuowana aż do wyłonienia zwycięzcy.",
+      "anyoneCanCheck": "Można pozwolić dowolnemu graczowi na sprawdzenie ostatniej deklaracji, nawet jeśli nie jest to jego tura.",
+      "predictCardsNotDealt": "W sytuacji, gdy zadeklarowany został najwyższy możliwy układ pokerowy, a następny gracz nie chce sprawdzić, może on teraz rozpocząć licytację pośród kart, które w tej turze nie zostały rozdane.",
+      "useTheEntireDeck": "Inną możliwością jest kontynuowanie rozgrywki tak długo, jak w talii pozostają karty nierozdane. Ten wariant daje pewność, że na pewnym etapie rozgrywki nawet najwyższe układy pokerowe staną się całkiem prawdopodobne. Kiedy ostatia karta zostaje rozdana, gracz z największą liczbą kart odpada z gry lub osoba z najmniejszą ilością kart wygrywa. Dobrym rozwiązaniem może być też ograniczenie liczby możliwych do wykorzystania kart z talii, np. kontynuowanie rozgrywki do czasu, gdy w talii pozostaną trzy nierozdane karty."
+    }
+  }
+}

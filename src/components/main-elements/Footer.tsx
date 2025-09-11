@@ -52,27 +52,18 @@ function Footer() {
             </p>
             <div className="flex flex-col gap-1 text-center">
                 <p className="text-sm text-neutral-500">
-                    <Trans i18nKey="footer.contentNotice" ns="layout">
-                        The content on this website is licensed
-                        under the{" "}
-                        <StandardExternalLink
-                            href="https://creativecommons.org/licenses/by-nc/4.0/"
-                        >
-                            CC BY-NC 4.0
-                        </StandardExternalLink>
-                        .
-                    </Trans>
+                    <Trans
+                        i18nKey="footer.contentNotice"
+                        ns="layout"
+                        components={[<StandardExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/"/>]}
+                    />
                 </p>
                 <p className="text-sm text-neutral-500">
-                    <Trans i18nKey="footer.sourceCodeNotice" ns="layout">
-                        The source code is available on{" "}
-                        <StandardExternalLink
-                            href="https://github.com/MatWojewodzki/liars-calculator"
-                        >
-                            GitHub
-                        </StandardExternalLink>
-                        .
-                    </Trans>
+                    <Trans
+                        i18nKey="footer.sourceCodeNotice"
+                        ns="layout"
+                        components={[<StandardExternalLink href="https://github.com/MatWojewodzki/liars-calculator"/>]}
+                    />
                 </p>
             </div>
 

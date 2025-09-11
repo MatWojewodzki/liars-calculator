@@ -25,25 +25,25 @@ function Index() {
                     "flex flex-col lg:flex-row justify-center items-center lg:items-start gap-16 lg:gap-24 2xl:gap-32"
                 )}>
                     <InfoSection header={t("infoSection1.title")}>
-                        <Trans i18nKey="infoSection1.content" ns="index">
-                            Have you ever guessed a poker hand correctly and
-                            thought <i className="italic">"How lucky was I?"</i> Look no further!
-                            Check the odds in our calculator instantly.
-                        </Trans>
+                        <Trans
+                            i18nKey="infoSection1.content"
+                            ns="index"
+                            components={[<i className="italic"/>]}
+                        />
                     </InfoSection>
                     <InfoSection header={t("infoSection2.title")}>
-                        <Trans i18nKey="infoSection2.content" ns="index">
-                            Have you always wondered what the poker hand order should be? Check out our{" "}
-                            <StandardInternalLink to="/hand-ranking">analysis</StandardInternalLink>
-                            .
-                        </Trans>
+                        <Trans
+                            i18nKey="infoSection2.content"
+                            ns="index"
+                            components={[<StandardInternalLink to="/hand-ranking"/>]}
+                        />
                     </InfoSection>
                     <InfoSection header={t("infoSection3.title")}>
-                        <Trans i18nKey="infoSection3.content" ns="index">
-                            Not sure how to play liar's poker yet? Go check out the{" "}
-                            <StandardInternalLink to="/game-rules">game rules</StandardInternalLink>
-                            .
-                        </Trans>
+                        <Trans
+                            i18nKey="infoSection3.content"
+                            ns="index"
+                            components={[<StandardInternalLink to="/game-rules"/>]}
+                        />
                     </InfoSection>
                 </section>
             </div>
