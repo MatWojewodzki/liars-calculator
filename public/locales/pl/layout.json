@@ -2,8 +2,8 @@
   "header": {
     "navbar": {
       "home": "Strona główna",
-      "pokerHandRanking": "Ranking układów pokerowych",
-      "gameRules": "Zasady gry",
+      "pokerHandRanking": "Starszeństwo układów pokerowych",
+      "gameRules": "Zasady blefa",
       "about": "O stronie"
     }
   },
