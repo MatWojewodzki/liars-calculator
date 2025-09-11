@@ -1,0 +1,19 @@
+{
+  "specificPokerHand": {
+    "highCard": "konkretnej wysokiej karty",
+    "pair": "konkretnej pary",
+    "straight": "konkretnego strita",
+    "twoPair": "konkretnych dwóch par",
+    "threeOfAKind": "konkretnej trójki",
+    "fullHouse": "konkretnego fulla",
+    "flush": "konkretnego koloru",
+    "fourOfAKind": "konkretnej karety",
+    "straightFlush": "konkretnego pokera"
+  },
+  "title": "Prawdopodobieństwo wystąpienia {{specificPokerHand}}",
+  "subtitle": "w zależności od kart, które masz na ręce",
+  "chance": "szansy",
+  "dontOwnSingle": "Nie posiadasz tej karty",
+  "hint1": "Posiadasz {{matchingCardCount}} z {{totalCardCount}} wymaganych kart",
+  "hint2": " oraz {{matchingCardCount}} z {{totalCardCount}} pozostałych wymaganych kart."
+}

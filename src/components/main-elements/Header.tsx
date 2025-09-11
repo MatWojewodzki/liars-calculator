@@ -3,6 +3,7 @@ import { Link, LinkProps } from "@tanstack/react-router"
 import { useState } from "react"
 import MaterialSymbol from "../common/MaterialSymbol.tsx"
 import classNames from "classnames"
+import { useTranslation } from "react-i18next"
 
 function NavigationLink({ to, children, onClick }: Pick<LinkProps, "to"> & { children: ReactNode, onClick: () => void }) {
     return <Link
@@ -16,6 +17,8 @@ function NavigationLink({ to, children, onClick }: Pick<LinkProps, "to"> & { chi
 }
 
 function Navbar({ isMenuOpen, onLinkClick }: { isMenuOpen: boolean, onLinkClick: () => void }) {
+    const { t } = useTranslation("layout", { keyPrefix: "header.navbar" })
+
     return (
         <nav
             id="navbar"
@@ -27,22 +30,22 @@ function Navbar({ isMenuOpen, onLinkClick }: { isMenuOpen: boolean, onLinkClick:
             <ul className="flex flex-col gap-y-6 sm:flex-row sm:gap-x-5 items-baseline">
                 <li>
                     <NavigationLink onClick={onLinkClick} to="/">
-                        Home
+                        {t("home")}
                     </NavigationLink>
                 </li>
                 <li>
                     <NavigationLink onClick={onLinkClick} to="/hand-ranking">
-                        Poker hand ranking
+                        {t("pokerHandRanking")}
                     </NavigationLink>
                 </li>
                 <li>
                     <NavigationLink onClick={onLinkClick} to="/game-rules">
-                        Game rules
+                        {t("gameRules")}
                     </NavigationLink>
                 </li>
                 <li>
                     <NavigationLink onClick={onLinkClick} to="/about">
-                        About
+                        {t("about")}
                     </NavigationLink>
                 </li>
             </ul>

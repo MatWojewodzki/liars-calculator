@@ -1,7 +1,7 @@
 import {ReactNode} from 'react'
 import {Link, LinkProps} from "@tanstack/react-router"
 
-function StandardInternalLink({ to, children }: Pick<LinkProps, "to"> & { children: ReactNode }) {
+function StandardInternalLink({ to, children }: Pick<LinkProps, "to"> & { children?: ReactNode }) {
     return (
         <Link
             to={to}

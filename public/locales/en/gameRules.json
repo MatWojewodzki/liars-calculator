@@ -1,0 +1,61 @@
+{
+  "title": "The rules of liar's poker",
+  "description": "Liar's poker is a card game that relates to poker. One of it's greatest advantages is the degree of freedom in terms of the number of players. You may find dozens of different variants of the game but the contents of this website are relevant to the one described below.",
+  "rules": {
+    "heading": "The rules",
+    "deckAndObjective": "The game is played using a 24-card deck, ranging from nines to aces, with four suits of each rank. The objective is to predict a poker hand that occurs among all of the cards distributed among the players, based on the cards in the player's hand and declarations of the previous players. In the first round, each player is given one card. A chosen player starts the bidding by naming any poker combination, then the gameplay continues clockwise.",
+    "playerActions": "Each subsequent player must take one of two available actions: guess a higher combination or check the previous player's declaration, therefore ending the round. If the player checks, everyone reveals their cards. If the previous guess turns out to be incorrect, the bidding player loses the round, otherwise loses the player who checked. All of the cards are shuffled and dealt once again, although this time the loser receives one more card than in the previous round. They now become the first player to bet.",
+    "endCondition": "The game continues until one of the players receives his fifth card. At this point, the player with the fewest cards in his hand wins."
+  },
+  "pokerCombinations": {
+    "heading": "Poker combinations",
+    "combinationDefinition": "Bidding in liar's poker differs from the poker because, along with a poker hand, the player has to specify it's parameters. A combination is considered higher than another if:",
+    "comparisonCriteria": {
+      "higherHand": "it's a higher poker hand or...",
+      "moreImportantParameterHigher": "it's the same poker hand but the more important parameter is higher or...",
+      "lessImportantParameterHigher": "it's the same poker hand, the more important parameter is equal and the less important parameter is higher."
+    }
+  },
+  "pokerHandRanking": {
+    "heading": "Poker hand ranking",
+    "intro": "Before the game begins, the ranking of poker hands must be specified and all players should familiarise themselves with it. You may find different hierarchies across the internet, but keep in mind that they often refer to other variants of the game.",
+    "suggestedRanking": {
+      "intro": "The ranking of poker hands we suggest, from highest to lowest, along with their parameters:",
+      "hands": {
+        "highStraightFlush": "<0>high straight flush</0> (also known as a <0>royal flush</0>) (<1>suit</1>) — five cards of the specified suit in sequence from 10 to A",
+        "lowStraightFlush": "<0>low straight flush</0> (<1>suit</1>) — five cards of the specified suit in sequence from 9 to K",
+        "fourOfAKind": "<0>four of a kind</0> (<1>rank</1>) — four cards of the specified rank",
+        "flush": "<0>flush</0> (<1>suit</1>) — five cards of the specified suit",
+        "fullHouse": "<0>full house</0> (<1>rank</1>, <1>rank</1>) — three cards of the first specified rank and two cards of the second specified rank, the rank specifying the three cards is the more important parameter",
+        "threeOfAKind": "<0>three of a kind</0> (<1>rank</1>) — three cards of the specified rank",
+        "twoPair": "<0>two pair</0> (<1>rank</1>, <1>rank</1>) — two cards of the first specified rank and two cards of the second specified rank, the higher rank is the more important parameter",
+        "highStraight": "<0>high straight</0> — five cards of any suit in sequence from 10 to A",
+        "lowStraight": "<0>low straight</0> — five cards of any suit in sequence from 9 to K",
+        "pair": "<0>pair</0> (<1>rank</1>) — two cards of the specified rank",
+        "highCard": "<0>high card</0> (<1>rank</1>) — a single card of the specified rank"
+      },
+      "reasoning": "You will find the reasoning behind this order in the <0>poker hand order section</0>."
+    },
+    "polishWikipediaRanking": "A different ranking can be found on the <0>Polish liar's poker Wikipedia page</0>, but the order presented there has not been justified in any way. It differs from the one presented above in the mutual position of a straight and a two pair."
+  },
+  "suitRanking": {
+    "heading": "Suit ranking",
+    "intro": "Along with the poker hand ranking, you also need to specify the suit ranking. It's necessary to determine the hierarchy of flushes, straight flushes and royal flushes. You may choose whichever order you prefer — below, we present the reversed lexicographical order commonly used in other games:",
+    "suits": {
+      "spades": "♠ Spades",
+      "hearts": "♥ Hearts",
+      "diamonds": "♦ Diamonds",
+      "clubs": "♣ Clubs"
+    }
+  },
+  "alternativeRules": {
+    "heading": "Alternative rules",
+    "rules": {
+      "maxNumOfCardsAdjusted": "You may change the maximum number of cards in a player's hand depending on the number of players.",
+      "kickingPlayers": "After someone receives the last card, you may kick them from the game and continue playing until only one player remains.",
+      "anyoneCanCheck": "You may allow any player to check the last guess, even if it's not their turn.",
+      "predictCardsNotDealt": "If a player calls the highest poker hand available and the following player doesn't want to request a check, the players may now predict poker hands among the cards not dealt.",
+      "useTheEntireDeck": "Another option is to play as long as some cards remain undealt. This variant ensures that even the highest poker hands at some point in the game will become fairly likely to be present. When the last card is dealt, the player with the most cards is kicked or the player with the fewest cards wins the game. It also might be a good solution to limit the number of cards that can be used from the deck, e.g. continuing the game until there are three undealt cards left in the deck."
+    }
+  }
+}

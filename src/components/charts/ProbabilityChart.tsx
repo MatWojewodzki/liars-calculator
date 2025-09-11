@@ -1,7 +1,8 @@
 import { Chart } from 'react-chartjs-2'
 import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Legend, Tooltip, ChartData } from 'chart.js'
-import useWindowWidth from "../../hooks/useWindowWidth.ts";
-import getChartColor from "../../utils/getChartColor.ts";
+import useWindowWidth from "../../hooks/useWindowWidth.ts"
+import getChartColor from "../../utils/getChartColor.ts"
+import { useTranslation } from "react-i18next"
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Legend, Tooltip)
 
@@ -11,6 +12,7 @@ type LineChartProps = {
 }
 
 function ProbabilityChart({data, title}: LineChartProps) {
+    const { t } = useTranslation("probabilityChart")
 
     const windowWidth = useWindowWidth()
 
@@ -55,13 +57,13 @@ function ProbabilityChart({data, title}: LineChartProps) {
                         x: {
                             title: {
                                 display: true,
-                                text: "number of cards on the table"
+                                text: t("xAxisLabel")
                             }
                         },
                         y: {
                             title: {
                                 display: true,
-                                text: "probability [%]",
+                                text: t("yAxisLabel"),
                                 padding: smBreakpoint ? undefined : 0
                             }
                         }

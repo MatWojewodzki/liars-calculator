@@ -1,0 +1,14 @@
+{
+  "header": {
+    "navbar": {
+      "home": "Strona główna",
+      "pokerHandRanking": "Starszeństwo układów pokerowych",
+      "gameRules": "Zasady blefa",
+      "about": "O stronie"
+    }
+  },
+  "footer": {
+    "contentNotice": "Treści zawarte na tej stronie są objęte licencją <0>CC BY-NC 4.0</0>.",
+    "sourceCodeNotice": "Kod źródłowy strony jest dostępny na platformie <0>GitHub</0>."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "highCard": "high card",
+  "pair": "pair",
+  "twoPair": "two pair",
+  "straight": "straight",
+  "lowStraight": "low straight",
+  "highStraight":  "high straight",
+  "threeOfAKind": "three of a kind",
+  "fullHouse": "full house",
+  "flush": "flush",
+  "fourOfAKind": "four of a kind",
+  "straightFlush": "straight flush",
+  "lowStraightFlush": "low straight flush",
+  "highStraightFlush": "high straight flush"
+}
