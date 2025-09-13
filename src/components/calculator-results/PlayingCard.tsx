@@ -22,7 +22,13 @@ function PlayingCard({ isMatching }: { isMatching: boolean }) {
             >
                 <MaterialSymbol
                     iconName={isMatching ? "check_circle" : "cancel"}
-                    className={isMatching ? "text-green-400" : "text-red-400"}
+                    className={classNames(
+                        "icon-sm sm:icon-regular lg:icon-lg xl:icon-xl",
+                        {
+                            "text-green-400": isMatching,
+                            "text-red-400": !isMatching
+                        }
+                    )}
                 />
             </div>
         </div>

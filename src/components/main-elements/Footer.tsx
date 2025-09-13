@@ -32,7 +32,7 @@ function Footer() {
                     "bg-white text-sm",
                     "rounded-lg border-6 border-neutral-200"
                 )}>
-                    <MaterialSymbol iconName="language" className="my-auto" size={20}/>
+                    <MaterialSymbol iconName="language" className="my-auto icon-sm"/>
                     <select
                         id="language-selector"
                         className={classNames(

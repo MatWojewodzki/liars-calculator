@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@utility icon-sm {
+    font-size: 20px !important;
+    font-variation-settings: "opsz" 20 !important;
+}
+@utility icon-regular {
+    font-size: 24px !important;
+    font-variation-settings: "opsz" 24 !important;
+}
+@utility icon-lg {
+    font-size: 28px !important;
+    font-variation-settings: "opsz" 28 !important;
+}
+@utility icon-xl {
+    font-size: 32px !important;
+    font-variation-settings: "opsz" 32 !important;
+}
