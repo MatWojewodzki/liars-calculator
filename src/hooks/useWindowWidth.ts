@@ -1,13 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 
-function useWindowWidth() {
-    const [width, setWidth] = useState(window.innerWidth)
+function useWindowWidth(delay = 150) {
+    const [width, setWidth] = useState(() => window.innerWidth)
 
     useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth)
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
+        let timeoutId: number
+
+        const handleResize = () => {
+            clearTimeout(timeoutId)
+            timeoutId = setTimeout(() => {
+                setWidth(window.innerWidth)
+            }, delay)
+        }
+
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            clearTimeout(timeoutId)
+            window.removeEventListener("resize", handleResize)
+        }
+    }, [delay])
 
     return width
 }
