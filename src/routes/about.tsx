@@ -10,7 +10,9 @@ function About() {
     const { t } = useTranslation("about")
     return (
         <div className="max-w-5xl mx-auto px-4 py-16">
-            <h1 className="text-2xl font-semibold">About</h1>
+            <h1 className="text-2xl font-semibold">
+                {t("title")}
+            </h1>
             <p className="mt-4">
                 <Trans
                     i18nKey="content"
