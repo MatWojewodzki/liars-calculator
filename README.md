@@ -8,9 +8,9 @@ on [GitHub](https://github.com/MatWojewodzki/liars-poker-probabilities/blob/main
 
 ## Disclaimer
 
-The probability data provided on this website has not been verified for accuracy or completeness.
-The website is intended for educational and illustrative purposes only — not as gambling advice
-or a guarantee of outcomes.
+The probability data provided on this website has not been verified for correctness or accuracy. The website
+is intended for educational and informational purposes only. It presents a mathematical analysis of the game
+and is not intended to promote gambling.
 
 ## Running the website locally
 
