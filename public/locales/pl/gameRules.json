@@ -42,10 +42,10 @@
     "heading": "Starszeństwo kolorów ",
     "intro": "Wraz ze starszeństwem układów, konieczne jest również określenie hierarchii kolorów. Jest ona niezbędna do rozstrzygania starszeństwa wewnątrz układów — kolorów, małych oraz dużych pokerów. Możesz wybrać dowolną kolejność — poniżej przedstawiamy odwróconą angielską kolejność alfabetyczną, powszechnie stosowaną w innych grach:",
     "suits": {
-      "spades": "♠ Pik",
-      "hearts": "♥ Kier",
-      "diamonds": "♦ Karo",
-      "clubs": "♣ Trefl"
+      "spades": "♠ pik",
+      "hearts": "♥ kier",
+      "diamonds": "♦ karo",
+      "clubs": "♣ trefl"
     }
   },
   "alternativeRules": {

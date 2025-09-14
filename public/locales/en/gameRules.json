@@ -42,10 +42,10 @@
     "heading": "Suit ranking",
     "intro": "Along with the poker hand ranking, you also need to specify the suit ranking. It's necessary to determine the hierarchy of flushes, straight flushes and royal flushes. You may choose whichever order you prefer — below, we present the reversed lexicographical order commonly used in other games:",
     "suits": {
-      "spades": "♠ Spades",
-      "hearts": "♥ Hearts",
-      "diamonds": "♦ Diamonds",
-      "clubs": "♣ Clubs"
+      "spades": "♠ spades",
+      "hearts": "♥ hearts",
+      "diamonds": "♦ diamonds",
+      "clubs": "♣ clubs"
     }
   },
   "alternativeRules": {
